@@ -1,0 +1,422 @@
+<!doctype html>
+<html>
+<head>
+    <base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Xavier Garcia">
+
+<meta name="description" content="">
+
+<title>Bindwith PostgreSQL backend at CentOS 6.4</title>
+<meta name="generator" content="Hugo 0.57.2" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link"><a href="https://xavier-garcia.com">Root</a></h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">Xavier Garcia - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="/post/minikube-and-debian9/">How to setup minikube lab on debian 9 with virtualbox</a></li>
+            
+            <li><a href="/post/moving_kops_aws_kubernetes_api_from_public_to_internal_elb/">Moving Kops Aws Kubernetes API from Public to Internal ELB</a></li>
+            
+            <li><a href="/post/how_to_create_a_helm_chart_repository_using_amazon_s3/">How to create a Helm chart repository using Amazon S3</a></li>
+            
+            <li><a href="/post/configure_automatically_external_dns_on_kubernetes/">Configure automatically external dns on Kubernetes</a></li>
+            
+            <li><a href="/post/manage_your_friends_with_microservice_in_golang/">Manage your friends with a microservice in Golang</a></li>
+            
+            <li><a href="/post/what_is_tensor_flow/">What is TensorFLow</a></li>
+            
+            <li><a href="/post/deploy_kubernetes_cluster_with_kops/">Deploy Kubernetes cluster with Kops and AWS s3 state</a></li>
+            
+            <li><a href="/post/install_lets_encrypt_debian_9_nginx/">Install Let&#39;s Encrypt with Nginx on Debian 9</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-5/">Design Patterns in Golang - Part-5</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-4/">Design Patterns in Golang - Part-4</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-3/">Design Patterns in Golang - Part-3</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-2/">Design Patterns in Golang - Part-2</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-1/">Design Patterns in Golang - Part-1</a></li>
+            
+            <li><a href="/post/how_do_i_get_the_certificate_authority_certificate_key/">How do I get the certificate authority certificate/key from a cluster created by kops?</a></li>
+            
+            <li><a href="/post/install_drdb_cluster_on_centos_7/">Install DRDB Cluster on Centos 7</a></li>
+            
+            <li><a href="/post/write_functions_in_functional_programming_style_in_scala/">Write Functions In Functional Programming Style In Scala</a></li>
+            
+            <li><a href="/post/decision_trees_in_python/">Decision trees in python</a></li>
+            
+            <li><a href="/post/logistic_regression_in_python/">Logistic Regression in python</a></li>
+            
+            <li><a href="/post/linear_regression_in_python/">Linear Regression in python</a></li>
+            
+            <li><a href="/post/clean_clean_my_docker/">Clean clean my docker</a></li>
+            
+            <li><a href="/post/my_docker_alias/">Docker alias for your zsh</a></li>
+            
+            <li><a href="/post/encryption_with_rsa/">Encryption with an RSA</a></li>
+            
+            <li><a href="/post/how_to_write_good_post_mortem/">How to Write a good post mortem</a></li>
+            
+            <li><a href="/post/how_to_write_product_requirements_document/">How to Write a Product Requirements Document (PRD)</a></li>
+            
+            <li><a href="/post/curl_http-2_support/">cURL HTTP/2 support</a></li>
+            
+            <li><a href="/post/template-7/">Bindwith PostgreSQL backend at CentOS 6.4</a></li>
+            
+            <li><a href="/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/">How to install and configure GlusterFS Server on Ubuntu</a></li>
+            
+            <li><a href="/post/template-5/">Linear Regression in python</a></li>
+            
+            <li><a href="/post/ipv6_on_ubiquity_edge_router_lite/">Activate IPv6 on Ubiquity Edge router lite</a></li>
+            
+        </ul>
+    </div>
+
+    
+    <div id="tags" class="open">
+        <h3 data-open="tags">Tags</h3>
+        <ul class="tags" style="display: none;">
+            
+            <li><a href="/tags/agile">agile</a></li>
+            
+            <li><a href="/tags/aws">aws</a></li>
+            
+            <li><a href="/tags/centos">centos</a></li>
+            
+            <li><a href="/tags/code">code</a></li>
+            
+            <li><a href="/tags/container">container</a></li>
+            
+            <li><a href="/tags/curl">curl</a></li>
+            
+            <li><a href="/tags/debian">debian</a></li>
+            
+            <li><a href="/tags/design">design</a></li>
+            
+            <li><a href="/tags/designpattern">designpattern</a></li>
+            
+            <li><a href="/tags/dev">dev</a></li>
+            
+            <li><a href="/tags/development">development</a></li>
+            
+            <li><a href="/tags/devops">devops</a></li>
+            
+            <li><a href="/tags/dns">dns</a></li>
+            
+            <li><a href="/tags/docker">docker</a></li>
+            
+            <li><a href="/tags/drdb">drdb</a></li>
+            
+            <li><a href="/tags/encrypt">encrypt</a></li>
+            
+            <li><a href="/tags/filesystem">filesystem</a></li>
+            
+            <li><a href="/tags/functional">functional</a></li>
+            
+            <li><a href="/tags/glusterfs">glusterfs</a></li>
+            
+            <li><a href="/tags/go">go</a></li>
+            
+            <li><a href="/tags/golang">golang</a></li>
+            
+            <li><a href="/tags/helm">helm</a></li>
+            
+            <li><a href="/tags/http">http</a></li>
+            
+            <li><a href="/tags/ipv6">ipv6</a></li>
+            
+            <li><a href="/tags/kops">kops</a></li>
+            
+            <li><a href="/tags/kubernetes">kubernetes</a></li>
+            
+            <li><a href="/tags/lab">lab</a></li>
+            
+            <li><a href="/tags/letsencrypt">letsencrypt</a></li>
+            
+            <li><a href="/tags/linux">linux</a></li>
+            
+            <li><a href="/tags/machinelearning">machinelearning</a></li>
+            
+            <li><a href="/tags/microservice">microservice</a></li>
+            
+            <li><a href="/tags/minikube">minikube</a></li>
+            
+            <li><a href="/tags/mongodb">mongodb</a></li>
+            
+            <li><a href="/tags/network">network</a></li>
+            
+            <li><a href="/tags/nginx">nginx</a></li>
+            
+            <li><a href="/tags/postmortem">postmortem</a></li>
+            
+            <li><a href="/tags/prd">prd</a></li>
+            
+            <li><a href="/tags/product">product</a></li>
+            
+            <li><a href="/tags/project_management">project_management</a></li>
+            
+            <li><a href="/tags/python">python</a></li>
+            
+            <li><a href="/tags/router">router</a></li>
+            
+            <li><a href="/tags/rsa">rsa</a></li>
+            
+            <li><a href="/tags/s3">s3</a></li>
+            
+            <li><a href="/tags/scala">scala</a></li>
+            
+            <li><a href="/tags/scrum">scrum</a></li>
+            
+            <li><a href="/tags/security">security</a></li>
+            
+            <li><a href="/tags/shell">shell</a></li>
+            
+            <li><a href="/tags/ssh">ssh</a></li>
+            
+            <li><a href="/tags/ssl">ssl</a></li>
+            
+            <li><a href="/tags/startup">startup</a></li>
+            
+            <li><a href="/tags/tensorflow">tensorflow</a></li>
+            
+            <li><a href="/tags/ubiquity">ubiquity</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Bindwith PostgreSQL backend at CentOS 6.4</h1>
+<h4>Published 11-23-2016 00:00:00</h4>
+
+<article>
+    <p>BIND/named with PostgreSQL back end at CentOS 6.4
+I&rsquo;ve been trying to find a good documentation on setting up Bind with PostgreSQL as its back end. So far the information is sparse so I&rsquo;ve decided to put this recipe together. There is much more than this but the idea is to give you a start.</p>
+
+<p>1) First, make sure you have bind, bind-sdb, postgresql-server RPMs (and their dependencies) installed.</p>
+
+<p>2) After having the RPMs in your system, you have to configure the iptables to allow DNS queries. Edit /etc/sysconfig/iptables to allow queries to the DNS port. Include the following statement after the SSH entry:</p>
+
+<p>-A INPUT -m state &ndash;state NEW -m udp -p udp &ndash;dport 53 -j ACCEPT</p>
+
+<p>Make sure you reload your iptables for this change to get the new rules into effect.</p>
+
+<p>3) Configure named to load the database support. Append the &ldquo;ENABLE_SDB=yes&rdquo; statement to /etc/sysconfig/named</p>
+
+<p>echo &ldquo;ENABLE_SDB=yes&rdquo; &gt;&gt; /etc/sysconfig/named</p>
+
+<p>4) The zone format to support PostgreSQL back end is the following:</p>
+
+<p>zone &ldquo;example.com.&rdquo; IN {        type master;
+        database &ldquo;pgsql  <db_name> <db_table> <db_host> <db_user> <db_password>&rdquo;;
+};</p>
+
+<p>Note: Make sure to create a database, user and password for BIND. In the following example we are using dbname=binddns, dbhost=&ldquo;localhost&rdquo;, dbuser=&ldquo;binduser&rdquo;, dbpass=&ldquo;bindpass&rdquo;.</p>
+
+<p>For this example we are going to create a .lab domain and a reverse zone for a private IP. We created a &ldquo;dom_lab&rdquo; table to hold the .lab domain and a &ldquo;rev_192_168_77&rdquo; table to hold the reverse zone for 192.168.77.0/24.</p>
+
+<p>We append the following information to /etc/named.conf</p>
+
+<p>zone &ldquo;lab.&rdquo; IN {
+    type master;
+    database &ldquo;pgsql binddns dom_lab localhost binduser bindpass&rdquo;;
+};</p>
+
+<p>zone &ldquo;77.168.192.in-addr.arpa.&rdquo; IN {
+        type master;
+        database &ldquo;pgsql binddns rev_192_168_77 localhost binduser bindpass&rdquo;;
+};</p>
+
+<p>4) Setting up the PostgreSQL database and tables.</p>
+
+<p>The bind schema only requires the following columns: name, ttl, rdtype, rdata. In our case we want to have additional columns for primary key (for easier update/delete transactions) and we want to keep track of when the last update to a record and the dbuser that did it.</p>
+
+<p>So, the first part is to create the auto update function for our trigger. We load the plpgsql language and drop any predefined function with the same name.</p>
+
+<p>CREATE LANGUAGE plpgsql;</p>
+
+<p>DROP FUNCTION modtime() CASCADE;</p>
+
+<p>CREATE FUNCTION modtime() RETURNS trigger AS $modtime$
+    BEGIN
+        &ndash; Check that name,rdtype,rdata are given
+        IF NEW.name IS NULL THEN
+            RAISE EXCEPTION &lsquo;name cannot be null&rsquo;;
+        END IF;
+        IF NEW.rdtype IS NULL THEN
+            RAISE EXCEPTION &lsquo;% cannot have null record type&rsquo;, NEW.name;
+        END IF;
+        IF NEW.rdata IS NULL THEN
+            RAISE EXCEPTION &lsquo;% cannot have null data&rsquo;, NEW.name;
+        END IF;</p>
+
+<pre><code>    -- Remember last update to table
+    NEW.modtime := current_timestamp;
+    NEW.moduser := current_user;
+    RETURN NEW;
+END;
+</code></pre>
+
+<p>$modtime$ LANGUAGE plpgsql;</p>
+
+<p>This functions assume that the table have a modtime and moduser column to update.</p>
+
+<p>Lets create the .lab domain forwarding records. For this we create the table, insert some records and create the trigger to track updates.</p>
+
+<p>drop table dom_lab;</p>
+
+<p>create table dom_lab (
+    id serial not null,
+    name    TEXT not null,
+    ttl     INTEGER not null DEFAULT &lsquo;120&rsquo;,
+    rdtype  TEXT not null,
+    rdata   TEXT not null,
+    modtime timestamp DEFAULT current_timestamp,
+    moduser TEXT DEFAULT current_user,
+    PRIMARY KEY(id)
+);</p>
+
+<p>INSERT INTO dom_lab (name, ttl, rdtype, rdata) values (&lsquo;lab&rsquo;,&lsquo;3600&rsquo;,&lsquo;SOA&rsquo;,&lsquo;localhost. support.savantadvisors.com. 1 1d 2h 4w 1h&rsquo;);
+INSERT INTO dom_lab (name, ttl, rdtype, rdata) values (&lsquo;lab&rsquo;,&lsquo;3600&rsquo;,&lsquo;NS&rsquo;,&lsquo;dns1.lab.&rsquo;);
+INSERT INTO dom_lab (name, ttl, rdtype, rdata) values (&lsquo;lab&rsquo;,&lsquo;3600&rsquo;,&lsquo;NS&rsquo;,&lsquo;localhost.&rsquo;);
+INSERT INTO dom_lab (name, ttl, rdtype, rdata) values (&lsquo;dns1.lab&rsquo;,&lsquo;120&rsquo;,&lsquo;A&rsquo;,&lsquo;192.168.77.19&rsquo;);
+INSERT INTO dom_lab (name, ttl, rdtype, rdata) values (&lsquo;dns1.lab&rsquo;,&lsquo;120&rsquo;,&lsquo;A&rsquo;,&lsquo;192.168.77.162&rsquo;);
+INSERT INTO dom_lab (name, ttl, rdtype, rdata) values (&lsquo;ovirt.lab&rsquo;,&lsquo;120&rsquo;,&lsquo;A&rsquo;,&lsquo;192.168.77.19&rsquo;);
+INSERT INTO dom_lab (name, ttl, rdtype, rdata) values (&lsquo;lab&rsquo;,&lsquo;120&rsquo;, &lsquo;MX&rsquo;,&lsquo;5 mx.lab.&rsquo;);
+INSERT INTO dom_lab (name, ttl, rdtype, rdata) values (&lsquo;mx.lab&rsquo;,&lsquo;120&rsquo;, &lsquo;A&rsquo;,&lsquo;192.168.77.19&rsquo;);</p>
+
+<p>CREATE TRIGGER dom_lab_timestamp BEFORE INSERT OR UPDATE ON dom_lab
+    FOR EACH ROW EXECUTE PROCEDURE modtime();</p>
+
+<p>Now lets create the table to hold the reverse zone for 192.168.77.0/24 network. For this we create the table, insert some values and create the trigger.</p>
+
+<p>drop table rev_192_168_77;</p>
+
+<p>create table rev_192_168_77 (
+    id serial not null,
+    name    TEXT not null,
+    ttl     INTEGER not null DEFAULT &lsquo;120&rsquo;,
+    rdtype  TEXT not null,
+    rdata   TEXT not null,
+    modtime timestamp DEFAULT current_timestamp,
+    moduser TEXT DEFAULT current_user,
+    PRIMARY KEY(id)
+);</p>
+
+<p>INSERT INTO rev_192_168_77 (name, ttl, rdtype, rdata) values (&lsquo;77.168.192.in-addr.arpa&rsquo;,&lsquo;3600&rsquo;,&lsquo;SOA&rsquo;,&lsquo;localhost. support.savantadvisors.com. 1 1d 2h 4w 1h&rsquo;);
+INSERT INTO rev_192_168_77 (name, ttl, rdtype, rdata) values (&lsquo;77.168.192.in-addr.arpa&rsquo;,&lsquo;3600&rsquo;,&lsquo;NS&rsquo;,&lsquo;localhost.&rsquo;);
+INSERT INTO rev_192_168_77 (name, ttl, rdtype, rdata) values (&lsquo;77.168.192.in-addr.arpa&rsquo;,&lsquo;3600&rsquo;,&lsquo;NS&rsquo;,&lsquo;dns1.lab.&rsquo;);
+INSERT INTO rev_192_168_77 (name, ttl, rdtype, rdata) values (&lsquo;19.77.168.192.in-addr.arpa&rsquo;,&lsquo;120&rsquo;,&lsquo;PTR&rsquo;,&lsquo;ovirt.lab&rsquo;);
+INSERT INTO rev_192_168_77 (name, ttl, rdtype, rdata) values (&lsquo;19.77.168.192.in-addr.arpa&rsquo;,&lsquo;120&rsquo;,&lsquo;PTR&rsquo;,&lsquo;dns1.lab&rsquo;);
+INSERT INTO rev_192_168_77 (name, ttl, rdtype, rdata) values (&lsquo;162.77.168.192.in-addr.arpa&rsquo;,&lsquo;120&rsquo;,&lsquo;PTR&rsquo;,&lsquo;ovirt.lab&rsquo;);</p>
+
+<p>CREATE TRIGGER rev_192_168_77_timestamp BEFORE INSERT OR UPDATE ON rev_192_168_77
+    FOR EACH ROW EXECUTE PROCEDURE modtime();</p>
+
+<p>Finally, here are some outputs:</p>
+
+<p>binddns=# select * from dom_lab;
+ id |   name    | ttl  | rdtype |                        rdata                         |          modtime           | moduser<br />
+&mdash;-+&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;-
+  1 | lab       | 3600 | SOA    | localhost. support.savantadvisors.com. 1 1d 2h 4w 1h | 2013-08-31 15:28:45.751118 | binduser
+  2 | lab       | 3600 | NS     | dns1.lab.                                            | 2013-08-31 15:28:45.757822 | binduser
+  3 | lab       | 3600 | NS     | localhost.                                           | 2013-08-31 15:28:45.766146 | binduser
+  4 | dns1.lab  |  120 | A      | 192.168.77.19                                        | 2013-08-31 15:28:45.774814 | binduser
+  5 | dns1.lab  |  120 | A      | 192.168.77.162                                       | 2013-08-31 15:28:45.78318  | binduser
+  6 | ovirt.lab |  120 | A      | 192.168.77.19                                        | 2013-08-31 15:28:45.791461 | binduser
+  7 | lab       |  120 | MX     | 5 mx.lab.                                            | 2013-08-31 15:28:45.799364 | binduser
+  8 | mx.lab    |  120 | A      | 192.168.77.162                                       | 2013-08-31 15:31:35.230772 | binduser
+(8 rows)</p>
+
+<p>binddns=#</p>
+
+<p>binddns=# select * from rev_192_168_77;
+ id |            name             | ttl  | rdtype |                        rdata                         |          modtime           | moduser<br />
+&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;-
+  1 | 77.168.192.in-addr.arpa     | 3600 | SOA    | localhost. support.savantadvisors.com. 1 1d 2h 4w 1h | 2013-08-31 15:34:39.063912 | binduser
+  2 | 77.168.192.in-addr.arpa     | 3600 | NS     | localhost.                                           | 2013-08-31 15:34:39.070303 | binduser
+  3 | 77.168.192.in-addr.arpa     | 3600 | NS     | dns1.lab.                                            | 2013-08-31 15:34:39.079037 | binduser
+  4 | 19.77.168.192.in-addr.arpa  |  120 | PTR    | ovirt.lab                                            | 2013-08-31 15:34:39.087333 | binduser
+  5 | 19.77.168.192.in-addr.arpa  |  120 | PTR    | dns1.lab                                             | 2013-08-31 15:34:39.095371 | binduser
+  6 | 162.77.168.192.in-addr.arpa |  120 | PTR    | ovirt.lab                                            | 2013-08-31 15:34:39.103927 | binduser
+(6 rows)
+binddns=# UPDATE rev_192_168_77 SET ttl=&lsquo;3600&rsquo; where id=&lsquo;4&rsquo;;
+UPDATE 1
+binddns=# DELETE FROM rev_192_168_77 WHERE id=&lsquo;5&rsquo;;
+DELETE 1</p>
+
+<p>NOTE: You can only have one reverse pointer per address so I deleted the second entry</p>
+
+<p>binddns=# select * from rev_192_168_77;
+ id |            name             | ttl  | rdtype |                        rdata                         |          modtime           | moduser<br />
+&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;-
+  1 | 77.168.192.in-addr.arpa     | 3600 | SOA    | localhost. support.savantadvisors.com. 1 1d 2h 4w 1h | 2013-08-31 15:34:39.063912 | binduser
+  2 | 77.168.192.in-addr.arpa     | 3600 | NS     | localhost.                                           | 2013-08-31 15:34:39.070303 | binduser
+  3 | 77.168.192.in-addr.arpa     | 3600 | NS     | dns1.lab.                                            | 2013-08-31 15:34:39.079037 | binduser
+  6 | 162.77.168.192.in-addr.arpa |  120 | PTR    | ovirt.lab                                            | 2013-08-31 15:34:39.103927 | binduser
+  4 | 19.77.168.192.in-addr.arpa  | 3600 | PTR    | ovirt.lab                                            | 2013-08-31 16:18:03.470766 | binduser
+(5 rows)</p>
+
+<p>binddns=#</p>
+
+<p>We can verify the results using the regular DNS utilities from bind-utils</p>
+
+<p>server# host ovirt.lab 127.0.0.1
+Using domain server:
+Name: 127.0.0.1
+Address: 127.0.0.1#53
+Aliases:</p>
+
+<p>ovirt.lab has address 192.168.77.19</p>
+
+<p>server# host 192.168.77.162 127.0.0.1
+Using domain server:
+Name: 127.0.0.1
+Address: 127.0.0.1#53
+Aliases:</p>
+
+<p>162.77.168.192.in-addr.arpa domain name pointer ovirt.lab.</p>
+
+<p>server# host 192.168.77.19 127.0.0.1
+Using domain server:
+Name: 127.0.0.1
+Address: 127.0.0.1#53
+Aliases:</p>
+
+<p>19.77.168.192.in-addr.arpa domain name pointer ovirt.lab.</p>
+
+<p>Hope this helps anyone looking for this kind of information. Thanks for stopping by!</p>
+
+</article>
+
+
+
+</div>
+</div>
+<script src="/js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

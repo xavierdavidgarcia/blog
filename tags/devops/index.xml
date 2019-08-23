@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops on Xavier Garcia</title>
+    <link>/tags/devops/</link>
+    <description>Recent content in Devops on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Moving Kops Aws Kubernetes API from Public to Internal ELB</title>
+      <link>/post/moving_kops_aws_kubernetes_api_from_public_to_internal_elb/</link>
+      <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/moving_kops_aws_kubernetes_api_from_public_to_internal_elb/</guid>
+      <description>Kops made very easy this change, first you need to edit your cluster: # kops edit cluster --name CLUSTER_NAME  Change the type from Public in to private
+# Please edit the object below. Lines beginning with a &#39;#&#39; will be ignored, # and an empty file will abort the edit. If an error occurs while saving this file will be # reopened with the relevant failures. # apiVersion: kops/v1alpha2 kind: Cluster metadata: creationTimestamp: 2018-04-25T04:23:38Z name: staging.</description>
+    </item>
+    
+    <item>
+      <title>How to create a Helm chart repository using Amazon S3</title>
+      <link>/post/how_to_create_a_helm_chart_repository_using_amazon_s3/</link>
+      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_to_create_a_helm_chart_repository_using_amazon_s3/</guid>
+      <description>Helm is a package manager for Kubernetes. You can bundle Kubernetes resources together as charts that define all the necessary resources and dependencies of an application. You can then use the Helm CLI to install all the pods, services, and ingresses for an application in one simple command.
+Just like Docker or NuGet, there&amp;rsquo;s a common public repository for Helm charts that the helm CLI uses by default. And just like Docker and NuGet, you can host your own Helm repository for your charts.</description>
+    </item>
+    
+    <item>
+      <title>Configure automatically external dns on Kubernetes</title>
+      <link>/post/configure_automatically_external_dns_on_kubernetes/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/configure_automatically_external_dns_on_kubernetes/</guid>
+      <description>External DNS ExternalDNS&amp;rsquo; current release is v0.5. This version allows you to keep selected zones (via --domain-filter) synchronized with Ingresses and Services of type=LoadBalancer in various cloud providers:
+ Google CloudDNS AWS Route 53 AzureDNS CloudFlare DigitalOcean DNSimple Infoblox Dyn OpenStack Designate PowerDNS  Example for Route 53 on AWS Kops kubernetes cluster with a ressouces files: --- apiVersion: extensions/v1beta1 kind: Deployment metadata: name: external-dns namespace: YOUR_NAME_SPACE spec: strategy: type: Recreate template: metadata: labels: app: external-dns spec: containers: - name: external-dns image: registry.</description>
+    </item>
+    
+    <item>
+      <title>Manage your friends with a microservice in Golang</title>
+      <link>/post/manage_your_friends_with_microservice_in_golang/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/manage_your_friends_with_microservice_in_golang/</guid>
+      <description>In this tutorial I will illustrate how you can build your own RESTful API in Go and MongoDB.
+API Specification The REST API service will expose endpoints to manage a list of friends. The operations that our endpoints will allow are:
+GET /friends Get list of friends GET /friends/:id Find a friends by id POST /friends Create new friend PUT /firends Update a friend DELETE /firends Delete a friend  Fetching Dependencies Before we begin, we need to get the packages we need to setup the API:</description>
+    </item>
+    
+    <item>
+      <title>Deploy Kubernetes cluster with Kops and AWS s3 state</title>
+      <link>/post/deploy_kubernetes_cluster_with_kops/</link>
+      <pubDate>Wed, 03 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/deploy_kubernetes_cluster_with_kops/</guid>
+      <description>Install Kops on your local Kops git repository: here
+Prerequisite kubectl is required, see here.
+OSX From Homebrew brew update &amp;amp;&amp;amp; brew install kops  The kops binary is also available via our releases.
+Linux curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d &#39;&amp;quot;&#39; -f 4)/kops-linux-amd64 chmod +x kops-linux-amd64 sudo mv kops-linux-amd64 /usr/local/bin/kops  Create the AWS s3 Bucket  aws s3api create-bucket \ --bucket kubernetes.bucket.aws.s3.name \ --region us-east-1 { &amp;quot;Location&amp;quot;: &amp;quot;/kubernetes.</description>
+    </item>
+    
+    <item>
+      <title>Install Let&#39;s Encrypt with Nginx on Debian 9</title>
+      <link>/post/install_lets_encrypt_debian_9_nginx/</link>
+      <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install_lets_encrypt_debian_9_nginx/</guid>
+      <description>Install Certbot Client Utility apt-get install certbot  Get Let’s Encrypt Certificate In order to obtain certificates for your domain, execute the cerbot command in console with the following parameters and flags as explained below. Run the command with root privileges and supply your domain name and all other subdomains you want to obtain certificates for by using the –d flag. Also, supply the &amp;ndash;standalone option in order for certbot to not interfere with Nginx configuration files.</description>
+    </item>
+    
+    <item>
+      <title>How do I get the certificate authority certificate/key from a cluster created by kops?</title>
+      <link>/post/how_do_i_get_the_certificate_authority_certificate_key/</link>
+      <pubDate>Tue, 03 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_do_i_get_the_certificate_authority_certificate_key/</guid>
+      <description>When you&amp;rsquo;r using the s3 plugin to store the Kops state inside a bucket, Kops stores the CA key and certificate in its S3 bucket.
+aws s3 cp s3://$BUCKET/$CLUSTER/pki/private/ca/$KEY.key ca.key aws s3 cp s3://$BUCKET/$CLUSTER/pki/issued/ca/$CERT.crt ca.crt  We will use this certificate to create some RBAC access.</description>
+    </item>
+    
+    <item>
+      <title>Install DRDB Cluster on Centos 7</title>
+      <link>/post/install_drdb_cluster_on_centos_7/</link>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install_drdb_cluster_on_centos_7/</guid>
+      <description>What is DRBD (Distributed Replicated Block Device)? DRBD (Distributed Replicated Block Device) is a Linux-based software component to mirror or replicate individual storage devices (such as hard disks or partitions) from one node to the other(s) over a network connection. DRBD makes it possible to maintain consistency of data among multiple systems in a network. DRBD also ensures high availability (HA) for Linux applications. DRBD supports three distinct replication modes, allowing three degrees of replication synchronicity.</description>
+    </item>
+    
+    <item>
+      <title>Bindwith PostgreSQL backend at CentOS 6.4</title>
+      <link>/post/template-7/</link>
+      <pubDate>Wed, 23 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/template-7/</guid>
+      <description>BIND/named with PostgreSQL back end at CentOS 6.4 I&amp;rsquo;ve been trying to find a good documentation on setting up Bind with PostgreSQL as its back end. So far the information is sparse so I&amp;rsquo;ve decided to put this recipe together. There is much more than this but the idea is to give you a start.
+1) First, make sure you have bind, bind-sdb, postgresql-server RPMs (and their dependencies) installed.
+2) After having the RPMs in your system, you have to configure the iptables to allow DNS queries.</description>
+    </item>
+    
+    <item>
+      <title>How to install and configure GlusterFS Server on Ubuntu</title>
+      <link>/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/</link>
+      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/</guid>
+      <description>GlusterFS is a distributed File System. In this article, we&amp;rsquo;ll show you how to create and configure GlusterFS Server on three nodes. You can create different types of GlusterFS volumes. We will only show you how to configure a replicated volume so that if you store a file on one machine, it will get replicated to all the nodes in the cluster. Suppose the hostnames of the three servers on which we want to install GlusterFS server are ,  and .</description>
+    </item>
+    
+  </channel>
+</rss>

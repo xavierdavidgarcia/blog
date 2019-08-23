@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on Xavier Garcia</title>
+    <link>/tags/network/</link>
+    <description>Recent content in Network on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Moving Kops Aws Kubernetes API from Public to Internal ELB</title>
+      <link>/post/moving_kops_aws_kubernetes_api_from_public_to_internal_elb/</link>
+      <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/moving_kops_aws_kubernetes_api_from_public_to_internal_elb/</guid>
+      <description>Kops made very easy this change, first you need to edit your cluster: # kops edit cluster --name CLUSTER_NAME  Change the type from Public in to private
+# Please edit the object below. Lines beginning with a &#39;#&#39; will be ignored, # and an empty file will abort the edit. If an error occurs while saving this file will be # reopened with the relevant failures. # apiVersion: kops/v1alpha2 kind: Cluster metadata: creationTimestamp: 2018-04-25T04:23:38Z name: staging.</description>
+    </item>
+    
+    <item>
+      <title>Configure automatically external dns on Kubernetes</title>
+      <link>/post/configure_automatically_external_dns_on_kubernetes/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/configure_automatically_external_dns_on_kubernetes/</guid>
+      <description>External DNS ExternalDNS&amp;rsquo; current release is v0.5. This version allows you to keep selected zones (via --domain-filter) synchronized with Ingresses and Services of type=LoadBalancer in various cloud providers:
+ Google CloudDNS AWS Route 53 AzureDNS CloudFlare DigitalOcean DNSimple Infoblox Dyn OpenStack Designate PowerDNS  Example for Route 53 on AWS Kops kubernetes cluster with a ressouces files: --- apiVersion: extensions/v1beta1 kind: Deployment metadata: name: external-dns namespace: YOUR_NAME_SPACE spec: strategy: type: Recreate template: metadata: labels: app: external-dns spec: containers: - name: external-dns image: registry.</description>
+    </item>
+    
+    <item>
+      <title>Bindwith PostgreSQL backend at CentOS 6.4</title>
+      <link>/post/template-7/</link>
+      <pubDate>Wed, 23 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/template-7/</guid>
+      <description>BIND/named with PostgreSQL back end at CentOS 6.4 I&amp;rsquo;ve been trying to find a good documentation on setting up Bind with PostgreSQL as its back end. So far the information is sparse so I&amp;rsquo;ve decided to put this recipe together. There is much more than this but the idea is to give you a start.
+1) First, make sure you have bind, bind-sdb, postgresql-server RPMs (and their dependencies) installed.
+2) After having the RPMs in your system, you have to configure the iptables to allow DNS queries.</description>
+    </item>
+    
+    <item>
+      <title>Activate IPv6 on Ubiquity Edge router lite</title>
+      <link>/post/ipv6_on_ubiquity_edge_router_lite/</link>
+      <pubDate>Sat, 09 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ipv6_on_ubiquity_edge_router_lite/</guid>
+      <description>Summary Below are the commands and my thoughts on setting up IPv6 on a Ubiquiti Networks EdgeRouter Lite (ERLite-3). Were one to follow this as a guide, the results should be functioning IPv6 on the WAN and LAN side.
+Note: As of EdgeMax v1.9.0, most IPv6 functionality is not available via the GUI. But, there is a new wizard as of this release which may work for the most basic case.</description>
+    </item>
+    
+  </channel>
+</rss>

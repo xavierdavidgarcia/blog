@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DNS on Xavier Garcia</title>
+    <link>/tags/dns/</link>
+    <description>Recent content in DNS on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Configure automatically external dns on Kubernetes</title>
+      <link>/post/configure_automatically_external_dns_on_kubernetes/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/configure_automatically_external_dns_on_kubernetes/</guid>
+      <description>External DNS ExternalDNS&amp;rsquo; current release is v0.5. This version allows you to keep selected zones (via --domain-filter) synchronized with Ingresses and Services of type=LoadBalancer in various cloud providers:
+ Google CloudDNS AWS Route 53 AzureDNS CloudFlare DigitalOcean DNSimple Infoblox Dyn OpenStack Designate PowerDNS  Example for Route 53 on AWS Kops kubernetes cluster with a ressouces files: --- apiVersion: extensions/v1beta1 kind: Deployment metadata: name: external-dns namespace: YOUR_NAME_SPACE spec: strategy: type: Recreate template: metadata: labels: app: external-dns spec: containers: - name: external-dns image: registry.</description>
+    </item>
+    
+  </channel>
+</rss>

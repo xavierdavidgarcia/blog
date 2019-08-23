@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+<head>
+    <base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Xavier Garcia">
+
+<meta name="description" content="">
+
+<title>How to install and configure GlusterFS Server on Ubuntu</title>
+<meta name="generator" content="Hugo 0.57.2" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link"><a href="https://xavier-garcia.com">Root</a></h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">Xavier Garcia - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="/post/minikube-and-debian9/">How to setup minikube lab on debian 9 with virtualbox</a></li>
+            
+            <li><a href="/post/moving_kops_aws_kubernetes_api_from_public_to_internal_elb/">Moving Kops Aws Kubernetes API from Public to Internal ELB</a></li>
+            
+            <li><a href="/post/how_to_create_a_helm_chart_repository_using_amazon_s3/">How to create a Helm chart repository using Amazon S3</a></li>
+            
+            <li><a href="/post/configure_automatically_external_dns_on_kubernetes/">Configure automatically external dns on Kubernetes</a></li>
+            
+            <li><a href="/post/manage_your_friends_with_microservice_in_golang/">Manage your friends with a microservice in Golang</a></li>
+            
+            <li><a href="/post/what_is_tensor_flow/">What is TensorFLow</a></li>
+            
+            <li><a href="/post/deploy_kubernetes_cluster_with_kops/">Deploy Kubernetes cluster with Kops and AWS s3 state</a></li>
+            
+            <li><a href="/post/install_lets_encrypt_debian_9_nginx/">Install Let&#39;s Encrypt with Nginx on Debian 9</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-5/">Design Patterns in Golang - Part-5</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-4/">Design Patterns in Golang - Part-4</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-3/">Design Patterns in Golang - Part-3</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-2/">Design Patterns in Golang - Part-2</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-1/">Design Patterns in Golang - Part-1</a></li>
+            
+            <li><a href="/post/how_do_i_get_the_certificate_authority_certificate_key/">How do I get the certificate authority certificate/key from a cluster created by kops?</a></li>
+            
+            <li><a href="/post/install_drdb_cluster_on_centos_7/">Install DRDB Cluster on Centos 7</a></li>
+            
+            <li><a href="/post/write_functions_in_functional_programming_style_in_scala/">Write Functions In Functional Programming Style In Scala</a></li>
+            
+            <li><a href="/post/decision_trees_in_python/">Decision trees in python</a></li>
+            
+            <li><a href="/post/logistic_regression_in_python/">Logistic Regression in python</a></li>
+            
+            <li><a href="/post/linear_regression_in_python/">Linear Regression in python</a></li>
+            
+            <li><a href="/post/clean_clean_my_docker/">Clean clean my docker</a></li>
+            
+            <li><a href="/post/my_docker_alias/">Docker alias for your zsh</a></li>
+            
+            <li><a href="/post/encryption_with_rsa/">Encryption with an RSA</a></li>
+            
+            <li><a href="/post/how_to_write_good_post_mortem/">How to Write a good post mortem</a></li>
+            
+            <li><a href="/post/how_to_write_product_requirements_document/">How to Write a Product Requirements Document (PRD)</a></li>
+            
+            <li><a href="/post/curl_http-2_support/">cURL HTTP/2 support</a></li>
+            
+            <li><a href="/post/template-7/">Bindwith PostgreSQL backend at CentOS 6.4</a></li>
+            
+            <li><a href="/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/">How to install and configure GlusterFS Server on Ubuntu</a></li>
+            
+            <li><a href="/post/template-5/">Linear Regression in python</a></li>
+            
+            <li><a href="/post/ipv6_on_ubiquity_edge_router_lite/">Activate IPv6 on Ubiquity Edge router lite</a></li>
+            
+        </ul>
+    </div>
+
+    
+    <div id="tags" class="open">
+        <h3 data-open="tags">Tags</h3>
+        <ul class="tags" style="display: none;">
+            
+            <li><a href="/tags/agile">agile</a></li>
+            
+            <li><a href="/tags/aws">aws</a></li>
+            
+            <li><a href="/tags/centos">centos</a></li>
+            
+            <li><a href="/tags/code">code</a></li>
+            
+            <li><a href="/tags/container">container</a></li>
+            
+            <li><a href="/tags/curl">curl</a></li>
+            
+            <li><a href="/tags/debian">debian</a></li>
+            
+            <li><a href="/tags/design">design</a></li>
+            
+            <li><a href="/tags/designpattern">designpattern</a></li>
+            
+            <li><a href="/tags/dev">dev</a></li>
+            
+            <li><a href="/tags/development">development</a></li>
+            
+            <li><a href="/tags/devops">devops</a></li>
+            
+            <li><a href="/tags/dns">dns</a></li>
+            
+            <li><a href="/tags/docker">docker</a></li>
+            
+            <li><a href="/tags/drdb">drdb</a></li>
+            
+            <li><a href="/tags/encrypt">encrypt</a></li>
+            
+            <li><a href="/tags/filesystem">filesystem</a></li>
+            
+            <li><a href="/tags/functional">functional</a></li>
+            
+            <li><a href="/tags/glusterfs">glusterfs</a></li>
+            
+            <li><a href="/tags/go">go</a></li>
+            
+            <li><a href="/tags/golang">golang</a></li>
+            
+            <li><a href="/tags/helm">helm</a></li>
+            
+            <li><a href="/tags/http">http</a></li>
+            
+            <li><a href="/tags/ipv6">ipv6</a></li>
+            
+            <li><a href="/tags/kops">kops</a></li>
+            
+            <li><a href="/tags/kubernetes">kubernetes</a></li>
+            
+            <li><a href="/tags/lab">lab</a></li>
+            
+            <li><a href="/tags/letsencrypt">letsencrypt</a></li>
+            
+            <li><a href="/tags/linux">linux</a></li>
+            
+            <li><a href="/tags/machinelearning">machinelearning</a></li>
+            
+            <li><a href="/tags/microservice">microservice</a></li>
+            
+            <li><a href="/tags/minikube">minikube</a></li>
+            
+            <li><a href="/tags/mongodb">mongodb</a></li>
+            
+            <li><a href="/tags/network">network</a></li>
+            
+            <li><a href="/tags/nginx">nginx</a></li>
+            
+            <li><a href="/tags/postmortem">postmortem</a></li>
+            
+            <li><a href="/tags/prd">prd</a></li>
+            
+            <li><a href="/tags/product">product</a></li>
+            
+            <li><a href="/tags/project_management">project_management</a></li>
+            
+            <li><a href="/tags/python">python</a></li>
+            
+            <li><a href="/tags/router">router</a></li>
+            
+            <li><a href="/tags/rsa">rsa</a></li>
+            
+            <li><a href="/tags/s3">s3</a></li>
+            
+            <li><a href="/tags/scala">scala</a></li>
+            
+            <li><a href="/tags/scrum">scrum</a></li>
+            
+            <li><a href="/tags/security">security</a></li>
+            
+            <li><a href="/tags/shell">shell</a></li>
+            
+            <li><a href="/tags/ssh">ssh</a></li>
+            
+            <li><a href="/tags/ssl">ssl</a></li>
+            
+            <li><a href="/tags/startup">startup</a></li>
+            
+            <li><a href="/tags/tensorflow">tensorflow</a></li>
+            
+            <li><a href="/tags/ubiquity">ubiquity</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>How to install and configure GlusterFS Server on Ubuntu</h1>
+<h4>Published 10-11-2016 00:00:00</h4>
+
+<article>
+    
+
+<p>GlusterFS is a distributed File System. In this article, we&rsquo;ll show you how to create and configure GlusterFS Server on three nodes. You can create different types of GlusterFS volumes. We will only show you how to configure a replicated volume so that if you store a file on one machine, it will get replicated to all the nodes in the cluster. Suppose the hostnames of the three servers on which we want to install GlusterFS server are <hostname-1>, <hostname-2> and <hostname-3>. GlusterFS works better with hostnames instead of IP addresses so we&rsquo;ll use hostnames in the installation procedure. Here are the steps:</p>
+
+<h4 id="install-python-software-properties">Install python-software-properties.</h4>
+
+<pre><code>sudo apt-get install python-software-properties
+</code></pre>
+
+<h4 id="add-the-glusterfs-ppa">Add the GlusterFS PPA.</h4>
+
+<pre><code>sudo add-apt-repository ppa:gluster/glusterfs-3.5
+sudo apt-get update
+</code></pre>
+
+<h4 id="install-glusterfs-server">Install glusterfs-server.</h4>
+
+<pre><code>sudo apt-get install glusterfs-server
+</code></pre>
+
+<h4 id="go-to-the-first-server-and-run-the-following-command">Go to the first server and run the following command:</h4>
+
+<pre><code>sudo gluster peer probe &lt;hostname-2&gt;
+sudo gluster peer probe &lt;hostname-3&gt;
+</code></pre>
+
+<p>Replace <hostname-2> and <hostname-3> above by the host names of the remaining two servers. This command will form a cluster. To know the status of the cluster, execute the following:</p>
+
+<pre><code>sudo gluster peer status
+</code></pre>
+
+<p>The output should show that this server is connected to 2 peers.</p>
+
+<h4 id="now-execute-the-same-command-from-the-second-or-third-server">Now execute the same command from the second or third server.</h4>
+
+<pre><code>sudo gluster peer status
+</code></pre>
+
+<p>You will again see that there are 2 peers but instead of the hostname of the first server, it has registered its IP address. To fix this, run the following command from second or third server:</p>
+
+<pre><code>sudo gluster peer probe &lt;hostname-1&gt;
+</code></pre>
+
+<p>Now on executing sudo gluster peer status, you will see hostname of the first server and not its IP address.</p>
+
+<h4 id="using-fdisk-create-a-partition-dev-sdb-on-all-the-three-servers">Using fdisk, create a partition /dev/sdb on all the three servers.</h4>
+
+<p>Format this partition using xfs filesystem.</p>
+
+<pre><code>sudo mkfs.xfs -i size=512 /dev/sdb1
+</code></pre>
+
+<p>You can also use ext4 filesystem if you prefer. To format the partition using ext4 filesystem, here is the command:</p>
+
+<pre><code>sudo mkfs.ext4 /dev/vdb1
+</code></pre>
+
+<h4 id="mount-the-above-partition-as-a-gluster-brick-at-data-on-all-the-three-servers">Mount the above partition as a Gluster brick at /data on all the three servers.</h4>
+
+<p>You can change the location of the mount if you want.</p>
+
+<pre><code>sudo mkdir /data
+sudo mount /dev/vdb1 /data
+</code></pre>
+
+<h4 id="the-next-step-is-to-create-one-or-more-volumes-in-data">The next step is to create one or more volumes in /data.</h4>
+
+<p>The advantage of creating multiple volumes is that multiple applications can share the same three GlusterFS servers but use three different volumes. Each of these volumes can be mounted on the application server so that the applications can&rsquo;t access other applications&rsquo; data. In this example, we will create two volumes: files1-volume and files2-volume at the location /data/files1 and /data/files2 respectively. You can use the volume names of your choice.</p>
+
+<pre><code>sudo mkdir /data/files1
+sudo mkdir /data/files2
+</code></pre>
+
+<h4 id="create-the-two-glusterfs-volumes">Create the two GlusterFS volumes.</h4>
+
+<pre><code>sudo gluster volume create files1-volume replica 3 &lt;hostname-1&gt;:/data/files1 &lt;hostname-2&gt;:/data/files1 &lt;hostname-3&gt;:/data/files1
+sudo gluster volume create files2-volume replica 3 &lt;hostname-1&gt;:/data/files2 &lt;hostname-2&gt;:/data/files2 &lt;hostname-3&gt;:/data/files2
+</code></pre>
+
+<p>Note the word replica. This indicates that we are creating a replicating volume. Also note the number 3 in the commands above. This denotes the number of GlusterFS servers in the cluster. In our case, we have 3. If you have more or less servers, you will need to change this number accordingly and provide information about the mounted GlusterFS brick on each of those servers after that.</p>
+
+<p>You will see an output such as:</p>
+
+<pre><code>volume create: files1-volume: success: please start the volume to access data
+</code></pre>
+
+<h4 id="now-is-the-time-to-start-the-volume">Now is the time to start the volume.</h4>
+
+<p>Make sure to do this step before you try to access the volume via a client library otherwise the client will hang. Execute the following commands:</p>
+
+<pre><code>sudo gluster volume start files1-volume
+sudo gluster volume start files2-volume
+</code></pre>
+
+<h4 id="to-check-the-status-of-the-volumes-run-the-following-commands">To check the status of the volumes, run the following commands:</h4>
+
+<pre><code>sudo gluster volume info files1-volume
+sudo gluster volume info files2-volume
+</code></pre>
+
+<p>You should get output similar to:</p>
+
+<pre><code>Volume Name: files1-volume
+Type: Replicate
+Volume ID: 3c551edd-5944-4e0c-ba13-331ba627b5a6
+Status: Started
+Number of Bricks: 1 x 3 = 3
+Transport-type: tcp
+Bricks:
+Brick1: &lt;hostname-1&gt;:/data/files1
+Brick2: &lt;hostname-2&gt;:/data/files1
+Brick3: &lt;hostname-3&gt;:/data/files1
+</code></pre>
+
+</article>
+
+
+
+</div>
+</div>
+<script src="/js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

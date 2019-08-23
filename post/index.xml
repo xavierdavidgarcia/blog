@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Xavier Garcia</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to setup minikube lab on debian 9 with virtualbox</title>
+      <link>/post/minikube-and-debian9/</link>
+      <pubDate>Fri, 18 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/minikube-and-debian9/</guid>
+      <description>How to setup minikube lab on debian 9 with virtualbox How to install Virtualbox on debian 9 sudo add-apt-repository &amp;quot;deb http://download.virtualbox.org/virtualbox/debian stretch contrib&amp;quot; wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add - sudo apt-get update sudo apt-get install virtualbox-5.2  Remove old version of minikube  &amp;gt; minikube stop &amp;gt;VBoxManage unregistervm minikube --delete &amp;gt;minikube detele &amp;gt;``` ### Reinstall and start minikube  bash minikube start -v 99</description>
+    </item>
+    
+    <item>
+      <title>Moving Kops Aws Kubernetes API from Public to Internal ELB</title>
+      <link>/post/moving_kops_aws_kubernetes_api_from_public_to_internal_elb/</link>
+      <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/moving_kops_aws_kubernetes_api_from_public_to_internal_elb/</guid>
+      <description>Kops made very easy this change, first you need to edit your cluster: # kops edit cluster --name CLUSTER_NAME  Change the type from Public in to private
+# Please edit the object below. Lines beginning with a &#39;#&#39; will be ignored, # and an empty file will abort the edit. If an error occurs while saving this file will be # reopened with the relevant failures. # apiVersion: kops/v1alpha2 kind: Cluster metadata: creationTimestamp: 2018-04-25T04:23:38Z name: staging.</description>
+    </item>
+    
+    <item>
+      <title>How to create a Helm chart repository using Amazon S3</title>
+      <link>/post/how_to_create_a_helm_chart_repository_using_amazon_s3/</link>
+      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_to_create_a_helm_chart_repository_using_amazon_s3/</guid>
+      <description>Helm is a package manager for Kubernetes. You can bundle Kubernetes resources together as charts that define all the necessary resources and dependencies of an application. You can then use the Helm CLI to install all the pods, services, and ingresses for an application in one simple command.
+Just like Docker or NuGet, there&amp;rsquo;s a common public repository for Helm charts that the helm CLI uses by default. And just like Docker and NuGet, you can host your own Helm repository for your charts.</description>
+    </item>
+    
+    <item>
+      <title>Configure automatically external dns on Kubernetes</title>
+      <link>/post/configure_automatically_external_dns_on_kubernetes/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/configure_automatically_external_dns_on_kubernetes/</guid>
+      <description>External DNS ExternalDNS&amp;rsquo; current release is v0.5. This version allows you to keep selected zones (via --domain-filter) synchronized with Ingresses and Services of type=LoadBalancer in various cloud providers:
+ Google CloudDNS AWS Route 53 AzureDNS CloudFlare DigitalOcean DNSimple Infoblox Dyn OpenStack Designate PowerDNS  Example for Route 53 on AWS Kops kubernetes cluster with a ressouces files: --- apiVersion: extensions/v1beta1 kind: Deployment metadata: name: external-dns namespace: YOUR_NAME_SPACE spec: strategy: type: Recreate template: metadata: labels: app: external-dns spec: containers: - name: external-dns image: registry.</description>
+    </item>
+    
+    <item>
+      <title>Manage your friends with a microservice in Golang</title>
+      <link>/post/manage_your_friends_with_microservice_in_golang/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/manage_your_friends_with_microservice_in_golang/</guid>
+      <description>In this tutorial I will illustrate how you can build your own RESTful API in Go and MongoDB.
+API Specification The REST API service will expose endpoints to manage a list of friends. The operations that our endpoints will allow are:
+GET /friends Get list of friends GET /friends/:id Find a friends by id POST /friends Create new friend PUT /firends Update a friend DELETE /firends Delete a friend  Fetching Dependencies Before we begin, we need to get the packages we need to setup the API:</description>
+    </item>
+    
+    <item>
+      <title>What is TensorFLow</title>
+      <link>/post/what_is_tensor_flow/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/what_is_tensor_flow/</guid>
+      <description>What is TensorFlow? If you&amp;rsquo;ve been following the machine learning community, in particular that of deep learning, over the last year, you&amp;rsquo;ve probably heard of Tensorflow. Tensorflow is a library to structure and run numerical computations developed in-house by Google Brain (the people who developed Alpha-GO). One can imagine this library as an extension of NumPY to work on more scalable architectures, as well as with more detailed algorithms and methods that pertain specifically to machine learning.</description>
+    </item>
+    
+    <item>
+      <title>Deploy Kubernetes cluster with Kops and AWS s3 state</title>
+      <link>/post/deploy_kubernetes_cluster_with_kops/</link>
+      <pubDate>Wed, 03 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/deploy_kubernetes_cluster_with_kops/</guid>
+      <description>Install Kops on your local Kops git repository: here
+Prerequisite kubectl is required, see here.
+OSX From Homebrew brew update &amp;amp;&amp;amp; brew install kops  The kops binary is also available via our releases.
+Linux curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d &#39;&amp;quot;&#39; -f 4)/kops-linux-amd64 chmod +x kops-linux-amd64 sudo mv kops-linux-amd64 /usr/local/bin/kops  Create the AWS s3 Bucket  aws s3api create-bucket \ --bucket kubernetes.bucket.aws.s3.name \ --region us-east-1 { &amp;quot;Location&amp;quot;: &amp;quot;/kubernetes.</description>
+    </item>
+    
+    <item>
+      <title>Install Let&#39;s Encrypt with Nginx on Debian 9</title>
+      <link>/post/install_lets_encrypt_debian_9_nginx/</link>
+      <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install_lets_encrypt_debian_9_nginx/</guid>
+      <description>Install Certbot Client Utility apt-get install certbot  Get Let’s Encrypt Certificate In order to obtain certificates for your domain, execute the cerbot command in console with the following parameters and flags as explained below. Run the command with root privileges and supply your domain name and all other subdomains you want to obtain certificates for by using the –d flag. Also, supply the &amp;ndash;standalone option in order for certbot to not interfere with Nginx configuration files.</description>
+    </item>
+    
+    <item>
+      <title>Design Patterns in Golang - Part-5</title>
+      <link>/post/design_patterns_in_golang-part-5/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/design_patterns_in_golang-part-5/</guid>
+      <description>Messaging Patterns Fan-In Messaging Patterns Fan-In is a messaging pattern used to create a funnel for work amongst workers (clients: source, server: destination).
+We can model fan-in using the Go channels.
+// Merge different channels in one channel func Merge(cs ...&amp;lt;-chan int) &amp;lt;-chan int { var wg sync.WaitGroup out := make(chan int) // Start an send goroutine for each input channel in cs. send // copies values from c to out until c is closed, then calls wg.</description>
+    </item>
+    
+    <item>
+      <title>Design Patterns in Golang - Part-4</title>
+      <link>/post/design_patterns_in_golang-part-4/</link>
+      <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/design_patterns_in_golang-part-4/</guid>
+      <description>Synchronization Patterns Semaphore Pattern A semaphore is a synchronization pattern/primitive that imposes mutual exclusion on a limited number of resources.
+Implementation package semaphore var ( ErrNoTickets = errors.New(&amp;quot;semaphore: could not aquire semaphore&amp;quot;) ErrIllegalRelease = errors.New(&amp;quot;semaphore: can&#39;t release the semaphore without acquiring it first&amp;quot;) ) // Interface contains the behavior of a semaphore that can be acquired and/or released. type Interface interface { Acquire() error Release() error } type implementation struct { sem chan struct{} timeout time.</description>
+    </item>
+    
+    <item>
+      <title>Design Patterns in Golang - Part-3</title>
+      <link>/post/design_patterns_in_golang-part-3/</link>
+      <pubDate>Sat, 14 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/design_patterns_in_golang-part-3/</guid>
+      <description>Behavioral Patterns Observer Pattern The observer pattern allows a type instance to &amp;ldquo;publish&amp;rdquo; events to other type instances (&amp;ldquo;observers&amp;rdquo;) who wish to be updated when a particular event occurs.
+Implementation In long-running applications&amp;mdash;such as webservers&amp;mdash;instances can keep a collection of observers that will receive notification of triggered events.
+Implementations vary, but interfaces can be used to make standard observers and notifiers:
+type ( // Event defines an indication of a point-in-time occurrence.</description>
+    </item>
+    
+    <item>
+      <title>Design Patterns in Golang - Part-2</title>
+      <link>/post/design_patterns_in_golang-part-2/</link>
+      <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/design_patterns_in_golang-part-2/</guid>
+      <description>Structural Patterns Decorator Pattern Decorator structural pattern allows extending the function of an existing object dynamically without altering its internals.
+Decorators provide a flexible method to extend functionality of objects.
+Implementation LogDecorate decorates a function with the signature func(int) int that manipulates integers and adds input/output logging capabilities.
+type Object func(int) int func LogDecorate(fn Object) Object { return func(n int) int { log.Println(&amp;quot;Starting the execution with the integer&amp;quot;, n) result := fn(n) log.</description>
+    </item>
+    
+    <item>
+      <title>Design Patterns in Golang - Part-1</title>
+      <link>/post/design_patterns_in_golang-part-1/</link>
+      <pubDate>Tue, 03 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/design_patterns_in_golang-part-1/</guid>
+      <description>Introduction Recently I started a series of articles about Gang of Four Design Patterns and their adoption in Golang. They made a lot of noise in the community. I read a lot of contradictionary opionions whether should be used or not. I am publishing those articles as show case how the common design patterns can be adopted and implemented in Golang. I don’t encourage or promote their usage. Every developer has own style of programming, architecture desing and problem solving solutions.</description>
+    </item>
+    
+    <item>
+      <title>How do I get the certificate authority certificate/key from a cluster created by kops?</title>
+      <link>/post/how_do_i_get_the_certificate_authority_certificate_key/</link>
+      <pubDate>Tue, 03 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_do_i_get_the_certificate_authority_certificate_key/</guid>
+      <description>When you&amp;rsquo;r using the s3 plugin to store the Kops state inside a bucket, Kops stores the CA key and certificate in its S3 bucket.
+aws s3 cp s3://$BUCKET/$CLUSTER/pki/private/ca/$KEY.key ca.key aws s3 cp s3://$BUCKET/$CLUSTER/pki/issued/ca/$CERT.crt ca.crt  We will use this certificate to create some RBAC access.</description>
+    </item>
+    
+    <item>
+      <title>Install DRDB Cluster on Centos 7</title>
+      <link>/post/install_drdb_cluster_on_centos_7/</link>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install_drdb_cluster_on_centos_7/</guid>
+      <description>What is DRBD (Distributed Replicated Block Device)? DRBD (Distributed Replicated Block Device) is a Linux-based software component to mirror or replicate individual storage devices (such as hard disks or partitions) from one node to the other(s) over a network connection. DRBD makes it possible to maintain consistency of data among multiple systems in a network. DRBD also ensures high availability (HA) for Linux applications. DRBD supports three distinct replication modes, allowing three degrees of replication synchronicity.</description>
+    </item>
+    
+    <item>
+      <title>Write Functions In Functional Programming Style In Scala</title>
+      <link>/post/write_functions_in_functional_programming_style_in_scala/</link>
+      <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/write_functions_in_functional_programming_style_in_scala/</guid>
+      <description>When you write programs in a functional style it is a requirement that you use pure functions. To begin understanding the concept of pure functions we first need to understand what referential transparency is. An expression satisfies referential transparency if its result can replace it and program behavior does not change in any way. This replacement does not depend on context so it must hold wherever substitution happens in the program.</description>
+    </item>
+    
+    <item>
+      <title>Decision trees in python</title>
+      <link>/post/decision_trees_in_python/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/decision_trees_in_python/</guid>
+      <description>Explained Decision trees are a form of supervised learning that can be used for both classification and regression purposes. In my experience, they are typically utilized for classification purposes. The model takes in an instance and then goes down the tree, testing significant features against a determined conditional statement. Depending on the result, it will go down to the left or right child branch and onward after that. Typically the most significant features in the process will fall closer to the root of the tree.</description>
+    </item>
+    
+    <item>
+      <title>Logistic Regression in python</title>
+      <link>/post/logistic_regression_in_python/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/logistic_regression_in_python/</guid>
+      <description>Explained Logistic regression is a supervised classification algorithm and therefore is useful for estimating discrete values. It is typically used for predicting the probability of an event using the logistic function in order to get an output between 0 and 1.
+When first learning this logistic regression, I was under the impression that it was a sort of a niche thing and therefore I didn’t give it my full attention.</description>
+    </item>
+    
+    <item>
+      <title>Linear Regression in python</title>
+      <link>/post/linear_regression_in_python/</link>
+      <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linear_regression_in_python/</guid>
+      <description>Linear Regression Perhaps the most popular machine learning algorithm out there and definitely the most under appreciated. Many data scientists have a tendency to forget that simpler is almost always preferred over complex when performance is comparable.
+Anyways, linear regression is a supervised learning algorithm that predicts an outcome based on continuous features. Linear regression is versatile in the sense that it has the ability to be run on a single variable (simple linear regression) or on many features (multiple linear regression).</description>
+    </item>
+    
+    <item>
+      <title>Clean clean my docker</title>
+      <link>/post/clean_clean_my_docker/</link>
+      <pubDate>Fri, 12 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/clean_clean_my_docker/</guid>
+      <description>Old school way Kill all running containers docker kill $(docker ps -q)  Delete all stopped containers (including data-only containers) docker rm $(docker ps -a -q)  Delete all &amp;lsquo;untagged/dangling&amp;rsquo; () images docker rmi $(docker images -q -f dangling=true)  Delete ALL images docker rmi $(docker images -q)  Docker command Since docker 1.25
+docker system prune  https://docs.docker.com/config/pruning/#prune-images</description>
+    </item>
+    
+    <item>
+      <title>Docker alias for your zsh</title>
+      <link>/post/my_docker_alias/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/my_docker_alias/</guid>
+      <description>Some docker alias to import on your shell echo &amp;quot;# Importing Docker Aliases&amp;quot; # ------------------------------------ Docker alias and function ------------------------------------ # Get latest container ID alias dl=&amp;quot;docker ps -l -q&amp;quot; # Docker ps alias dps=&amp;quot;docker ps&amp;quot; alias dpsa=&amp;quot;docker ps -a&amp;quot; # Get container IP alias dip=&amp;quot;docker inspect --format &#39;{{ .NetworkSettings.IPAddress }}&#39;&amp;quot; # docker inspect di() { docker inspect $1; } # Execute interactive container, e.g., $dex base /bin/bash alias dexec=&amp;quot;docker exec -i -t&amp;quot; # Stop all containers dstop() { docker stop $(docker ps -a -q); } # Remove all containers drm() { docker rm $(docker ps -a -q); } # Stop and Remove all containers alias drmf=&#39;docker stop $(docker ps -a -q) &amp;amp;&amp;amp; docker rm $(docker ps -a -q)&#39; # Remove all images dri() { docker rmi $(docker images -q); } # Dockerfile build, e.</description>
+    </item>
+    
+    <item>
+      <title>Encryption with an RSA</title>
+      <link>/post/encryption_with_rsa/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/encryption_with_rsa/</guid>
+      <description>How to encrypt a message or file using Openssl With openssl, it&amp;rsquo;s not too hard. The following tutorial assumes you&amp;rsquo;ve setup RSA private/publicc.
+ Note: If you&amp;rsquo;re on OSX, you should install the latest versions of OpenSSL and OpenSSH with Homebrew.
+ First, let&amp;rsquo;s start with our plaintext file:
+# echo &amp;quot;Hello world&amp;quot; &amp;gt; test.txt  Encrypt with Public key # cat test.txt | openssl rsautl -encrypt -pubin -inkey ~/.</description>
+    </item>
+    
+    <item>
+      <title>How to Write a good post mortem</title>
+      <link>/post/how_to_write_good_post_mortem/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_to_write_good_post_mortem/</guid>
+      <description>Introduction If you’ve been a part of any project, you know that things do not always go as planned. Even if you finished on-time and under budget, there’s a good chance you can always find better ways to run projects.
+The best way to assess your work is to conduct a post-mortem meeting, also called a retrospective meeting for those of you who get a certain feeling when you hear the word “post-mortem”.</description>
+    </item>
+    
+    <item>
+      <title>How to Write a Product Requirements Document (PRD)</title>
+      <link>/post/how_to_write_product_requirements_document/</link>
+      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_to_write_product_requirements_document/</guid>
+      <description>What is a Product Requirements Document and why is it important? This document is an initial one, the starting point in the process of developing your new product. Basically, it describes all the features, specifications, and functionality of a product, and also declares the conditions and stages for design and development. Writing a good PRD is similar to the place where the marathon of creation begins. The better you explain the rules before the race starts, the better the chance that everything goes smoothly and correctly.</description>
+    </item>
+    
+    <item>
+      <title>cURL HTTP/2 support</title>
+      <link>/post/curl_http-2_support/</link>
+      <pubDate>Tue, 24 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/curl_http-2_support/</guid>
+      <description>Introduction cURL is one of the most powerful tool for testing HTTP requests and responses. Most developers use curl to interact with HTTP APIs or to test a website.
+Starting from version 7.43.0 cURL (and libcurl) supports HTTP/2. You can perform a request using the HTTP/2 protocol passing the &amp;ndash;http2 flag:
+ curl -I --http2 https://www.cloudflare.com/ HTTP/2.0 200 server:cloudflare-nginx date:Sun, 24 Jan 2016 21:53:48 GMT content-type:text/html set-cookie:__cfduid=d73309ac5d32f18d2ca9efb414cc0fd111453672428; expires=Mon, 23-Jan-17 21:53:48 GMT; path=/; domain=.</description>
+    </item>
+    
+    <item>
+      <title>Bindwith PostgreSQL backend at CentOS 6.4</title>
+      <link>/post/template-7/</link>
+      <pubDate>Wed, 23 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/template-7/</guid>
+      <description>BIND/named with PostgreSQL back end at CentOS 6.4 I&amp;rsquo;ve been trying to find a good documentation on setting up Bind with PostgreSQL as its back end. So far the information is sparse so I&amp;rsquo;ve decided to put this recipe together. There is much more than this but the idea is to give you a start.
+1) First, make sure you have bind, bind-sdb, postgresql-server RPMs (and their dependencies) installed.
+2) After having the RPMs in your system, you have to configure the iptables to allow DNS queries.</description>
+    </item>
+    
+    <item>
+      <title>How to install and configure GlusterFS Server on Ubuntu</title>
+      <link>/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/</link>
+      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/</guid>
+      <description>GlusterFS is a distributed File System. In this article, we&amp;rsquo;ll show you how to create and configure GlusterFS Server on three nodes. You can create different types of GlusterFS volumes. We will only show you how to configure a replicated volume so that if you store a file on one machine, it will get replicated to all the nodes in the cluster. Suppose the hostnames of the three servers on which we want to install GlusterFS server are ,  and .</description>
+    </item>
+    
+    <item>
+      <title>Linear Regression in python</title>
+      <link>/post/template-5/</link>
+      <pubDate>Tue, 14 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/template-5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Activate IPv6 on Ubiquity Edge router lite</title>
+      <link>/post/ipv6_on_ubiquity_edge_router_lite/</link>
+      <pubDate>Sat, 09 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ipv6_on_ubiquity_edge_router_lite/</guid>
+      <description>Summary Below are the commands and my thoughts on setting up IPv6 on a Ubiquiti Networks EdgeRouter Lite (ERLite-3). Were one to follow this as a guide, the results should be functioning IPv6 on the WAN and LAN side.
+Note: As of EdgeMax v1.9.0, most IPv6 functionality is not available via the GUI. But, there is a new wizard as of this release which may work for the most basic case.</description>
+    </item>
+    
+  </channel>
+</rss>

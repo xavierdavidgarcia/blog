@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Functional on Xavier Garcia</title>
+    <link>/tags/functional/</link>
+    <description>Recent content in Functional on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/functional/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Write Functions In Functional Programming Style In Scala</title>
+      <link>/post/write_functions_in_functional_programming_style_in_scala/</link>
+      <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/write_functions_in_functional_programming_style_in_scala/</guid>
+      <description>When you write programs in a functional style it is a requirement that you use pure functions. To begin understanding the concept of pure functions we first need to understand what referential transparency is. An expression satisfies referential transparency if its result can replace it and program behavior does not change in any way. This replacement does not depend on context so it must hold wherever substitution happens in the program.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IPv6 on Xavier Garcia</title>
+    <link>/tags/ipv6/</link>
+    <description>Recent content in IPv6 on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ipv6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Activate IPv6 on Ubiquity Edge router lite</title>
+      <link>/post/ipv6_on_ubiquity_edge_router_lite/</link>
+      <pubDate>Sat, 09 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ipv6_on_ubiquity_edge_router_lite/</guid>
+      <description>Summary Below are the commands and my thoughts on setting up IPv6 on a Ubiquiti Networks EdgeRouter Lite (ERLite-3). Were one to follow this as a guide, the results should be functioning IPv6 on the WAN and LAN side.
+Note: As of EdgeMax v1.9.0, most IPv6 functionality is not available via the GUI. But, there is a new wizard as of this release which may work for the most basic case.</description>
+    </item>
+    
+  </channel>
+</rss>

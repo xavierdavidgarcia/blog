@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lab on Xavier Garcia</title>
+    <link>/tags/lab/</link>
+    <description>Recent content in Lab on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/lab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Decision trees in python</title>
+      <link>/post/decision_trees_in_python/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/decision_trees_in_python/</guid>
+      <description>Explained Decision trees are a form of supervised learning that can be used for both classification and regression purposes. In my experience, they are typically utilized for classification purposes. The model takes in an instance and then goes down the tree, testing significant features against a determined conditional statement. Depending on the result, it will go down to the left or right child branch and onward after that. Typically the most significant features in the process will fall closer to the root of the tree.</description>
+    </item>
+    
+    <item>
+      <title>Logistic Regression in python</title>
+      <link>/post/logistic_regression_in_python/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/logistic_regression_in_python/</guid>
+      <description>Explained Logistic regression is a supervised classification algorithm and therefore is useful for estimating discrete values. It is typically used for predicting the probability of an event using the logistic function in order to get an output between 0 and 1.
+When first learning this logistic regression, I was under the impression that it was a sort of a niche thing and therefore I didn’t give it my full attention.</description>
+    </item>
+    
+    <item>
+      <title>Linear Regression in python</title>
+      <link>/post/linear_regression_in_python/</link>
+      <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/linear_regression_in_python/</guid>
+      <description>Linear Regression Perhaps the most popular machine learning algorithm out there and definitely the most under appreciated. Many data scientists have a tendency to forget that simpler is almost always preferred over complex when performance is comparable.
+Anyways, linear regression is a supervised learning algorithm that predicts an outcome based on continuous features. Linear regression is versatile in the sense that it has the ability to be run on a single variable (simple linear regression) or on many features (multiple linear regression).</description>
+    </item>
+    
+    <item>
+      <title>Docker alias for your zsh</title>
+      <link>/post/my_docker_alias/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/my_docker_alias/</guid>
+      <description>Some docker alias to import on your shell echo &amp;quot;# Importing Docker Aliases&amp;quot; # ------------------------------------ Docker alias and function ------------------------------------ # Get latest container ID alias dl=&amp;quot;docker ps -l -q&amp;quot; # Docker ps alias dps=&amp;quot;docker ps&amp;quot; alias dpsa=&amp;quot;docker ps -a&amp;quot; # Get container IP alias dip=&amp;quot;docker inspect --format &#39;{{ .NetworkSettings.IPAddress }}&#39;&amp;quot; # docker inspect di() { docker inspect $1; } # Execute interactive container, e.g., $dex base /bin/bash alias dexec=&amp;quot;docker exec -i -t&amp;quot; # Stop all containers dstop() { docker stop $(docker ps -a -q); } # Remove all containers drm() { docker rm $(docker ps -a -q); } # Stop and Remove all containers alias drmf=&#39;docker stop $(docker ps -a -q) &amp;amp;&amp;amp; docker rm $(docker ps -a -q)&#39; # Remove all images dri() { docker rmi $(docker images -q); } # Dockerfile build, e.</description>
+    </item>
+    
+    <item>
+      <title>Linear Regression in python</title>
+      <link>/post/template-5/</link>
+      <pubDate>Tue, 14 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/template-5/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

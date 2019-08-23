@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TensorFlow on Xavier Garcia</title>
+    <link>/tags/tensorflow/</link>
+    <description>Recent content in TensorFlow on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What is TensorFLow</title>
+      <link>/post/what_is_tensor_flow/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/what_is_tensor_flow/</guid>
+      <description>What is TensorFlow? If you&amp;rsquo;ve been following the machine learning community, in particular that of deep learning, over the last year, you&amp;rsquo;ve probably heard of Tensorflow. Tensorflow is a library to structure and run numerical computations developed in-house by Google Brain (the people who developed Alpha-GO). One can imagine this library as an extension of NumPY to work on more scalable architectures, as well as with more detailed algorithms and methods that pertain specifically to machine learning.</description>
+    </item>
+    
+  </channel>
+</rss>

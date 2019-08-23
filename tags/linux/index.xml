@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Xavier Garcia</title>
+    <link>/tags/linux/</link>
+    <description>Recent content in linux on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to setup minikube lab on debian 9 with virtualbox</title>
+      <link>/post/minikube-and-debian9/</link>
+      <pubDate>Fri, 18 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/minikube-and-debian9/</guid>
+      <description>How to setup minikube lab on debian 9 with virtualbox How to install Virtualbox on debian 9 sudo add-apt-repository &amp;quot;deb http://download.virtualbox.org/virtualbox/debian stretch contrib&amp;quot; wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add - sudo apt-get update sudo apt-get install virtualbox-5.2  Remove old version of minikube  &amp;gt; minikube stop &amp;gt;VBoxManage unregistervm minikube --delete &amp;gt;minikube detele &amp;gt;``` ### Reinstall and start minikube  bash minikube start -v 99</description>
+    </item>
+    
+    <item>
+      <title>Encryption with an RSA</title>
+      <link>/post/encryption_with_rsa/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/encryption_with_rsa/</guid>
+      <description>How to encrypt a message or file using Openssl With openssl, it&amp;rsquo;s not too hard. The following tutorial assumes you&amp;rsquo;ve setup RSA private/publicc.
+ Note: If you&amp;rsquo;re on OSX, you should install the latest versions of OpenSSL and OpenSSH with Homebrew.
+ First, let&amp;rsquo;s start with our plaintext file:
+# echo &amp;quot;Hello world&amp;quot; &amp;gt; test.txt  Encrypt with Public key # cat test.txt | openssl rsautl -encrypt -pubin -inkey ~/.</description>
+    </item>
+    
+  </channel>
+</rss>

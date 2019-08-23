@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PRD on Xavier Garcia</title>
+    <link>/tags/prd/</link>
+    <description>Recent content in PRD on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/prd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Write a Product Requirements Document (PRD)</title>
+      <link>/post/how_to_write_product_requirements_document/</link>
+      <pubDate>Fri, 17 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_to_write_product_requirements_document/</guid>
+      <description>What is a Product Requirements Document and why is it important? This document is an initial one, the starting point in the process of developing your new product. Basically, it describes all the features, specifications, and functionality of a product, and also declares the conditions and stages for design and development. Writing a good PRD is similar to the place where the marathon of creation begins. The better you explain the rules before the race starts, the better the chance that everything goes smoothly and correctly.</description>
+    </item>
+    
+  </channel>
+</rss>

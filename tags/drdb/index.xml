@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DRDB on Xavier Garcia</title>
+    <link>/tags/drdb/</link>
+    <description>Recent content in DRDB on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/drdb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install DRDB Cluster on Centos 7</title>
+      <link>/post/install_drdb_cluster_on_centos_7/</link>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install_drdb_cluster_on_centos_7/</guid>
+      <description>What is DRBD (Distributed Replicated Block Device)? DRBD (Distributed Replicated Block Device) is a Linux-based software component to mirror or replicate individual storage devices (such as hard disks or partitions) from one node to the other(s) over a network connection. DRBD makes it possible to maintain consistency of data among multiple systems in a network. DRBD also ensures high availability (HA) for Linux applications. DRBD supports three distinct replication modes, allowing three degrees of replication synchronicity.</description>
+    </item>
+    
+  </channel>
+</rss>

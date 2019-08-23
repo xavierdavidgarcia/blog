@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mongodb on Xavier Garcia</title>
+    <link>/tags/mongodb/</link>
+    <description>Recent content in Mongodb on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manage your friends with a microservice in Golang</title>
+      <link>/post/manage_your_friends_with_microservice_in_golang/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/manage_your_friends_with_microservice_in_golang/</guid>
+      <description>In this tutorial I will illustrate how you can build your own RESTful API in Go and MongoDB.
+API Specification The REST API service will expose endpoints to manage a list of friends. The operations that our endpoints will allow are:
+GET /friends Get list of friends GET /friends/:id Find a friends by id POST /friends Create new friend PUT /firends Update a friend DELETE /firends Delete a friend  Fetching Dependencies Before we begin, we need to get the packages we need to setup the API:</description>
+    </item>
+    
+  </channel>
+</rss>

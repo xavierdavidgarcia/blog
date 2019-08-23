@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dev on Xavier Garcia</title>
+    <link>/tags/dev/</link>
+    <description>Recent content in Dev on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Design Patterns in Golang - Part-5</title>
+      <link>/post/design_patterns_in_golang-part-5/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/design_patterns_in_golang-part-5/</guid>
+      <description>Messaging Patterns Fan-In Messaging Patterns Fan-In is a messaging pattern used to create a funnel for work amongst workers (clients: source, server: destination).
+We can model fan-in using the Go channels.
+// Merge different channels in one channel func Merge(cs ...&amp;lt;-chan int) &amp;lt;-chan int { var wg sync.WaitGroup out := make(chan int) // Start an send goroutine for each input channel in cs. send // copies values from c to out until c is closed, then calls wg.</description>
+    </item>
+    
+    <item>
+      <title>Design Patterns in Golang - Part-4</title>
+      <link>/post/design_patterns_in_golang-part-4/</link>
+      <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/design_patterns_in_golang-part-4/</guid>
+      <description>Synchronization Patterns Semaphore Pattern A semaphore is a synchronization pattern/primitive that imposes mutual exclusion on a limited number of resources.
+Implementation package semaphore var ( ErrNoTickets = errors.New(&amp;quot;semaphore: could not aquire semaphore&amp;quot;) ErrIllegalRelease = errors.New(&amp;quot;semaphore: can&#39;t release the semaphore without acquiring it first&amp;quot;) ) // Interface contains the behavior of a semaphore that can be acquired and/or released. type Interface interface { Acquire() error Release() error } type implementation struct { sem chan struct{} timeout time.</description>
+    </item>
+    
+    <item>
+      <title>Design Patterns in Golang - Part-3</title>
+      <link>/post/design_patterns_in_golang-part-3/</link>
+      <pubDate>Sat, 14 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/design_patterns_in_golang-part-3/</guid>
+      <description>Behavioral Patterns Observer Pattern The observer pattern allows a type instance to &amp;ldquo;publish&amp;rdquo; events to other type instances (&amp;ldquo;observers&amp;rdquo;) who wish to be updated when a particular event occurs.
+Implementation In long-running applications&amp;mdash;such as webservers&amp;mdash;instances can keep a collection of observers that will receive notification of triggered events.
+Implementations vary, but interfaces can be used to make standard observers and notifiers:
+type ( // Event defines an indication of a point-in-time occurrence.</description>
+    </item>
+    
+    <item>
+      <title>Design Patterns in Golang - Part-2</title>
+      <link>/post/design_patterns_in_golang-part-2/</link>
+      <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/design_patterns_in_golang-part-2/</guid>
+      <description>Structural Patterns Decorator Pattern Decorator structural pattern allows extending the function of an existing object dynamically without altering its internals.
+Decorators provide a flexible method to extend functionality of objects.
+Implementation LogDecorate decorates a function with the signature func(int) int that manipulates integers and adds input/output logging capabilities.
+type Object func(int) int func LogDecorate(fn Object) Object { return func(n int) int { log.Println(&amp;quot;Starting the execution with the integer&amp;quot;, n) result := fn(n) log.</description>
+    </item>
+    
+    <item>
+      <title>Design Patterns in Golang - Part-1</title>
+      <link>/post/design_patterns_in_golang-part-1/</link>
+      <pubDate>Tue, 03 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/design_patterns_in_golang-part-1/</guid>
+      <description>Introduction Recently I started a series of articles about Gang of Four Design Patterns and their adoption in Golang. They made a lot of noise in the community. I read a lot of contradictionary opionions whether should be used or not. I am publishing those articles as show case how the common design patterns can be adopted and implemented in Golang. I don’t encourage or promote their usage. Every developer has own style of programming, architecture desing and problem solving solutions.</description>
+    </item>
+    
+  </channel>
+</rss>

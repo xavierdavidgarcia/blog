@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LetsEncrypt on Xavier Garcia</title>
+    <link>/tags/letsencrypt/</link>
+    <description>Recent content in LetsEncrypt on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/letsencrypt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install Let&#39;s Encrypt with Nginx on Debian 9</title>
+      <link>/post/install_lets_encrypt_debian_9_nginx/</link>
+      <pubDate>Sat, 23 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install_lets_encrypt_debian_9_nginx/</guid>
+      <description>Install Certbot Client Utility apt-get install certbot  Get Let’s Encrypt Certificate In order to obtain certificates for your domain, execute the cerbot command in console with the following parameters and flags as explained below. Run the command with root privileges and supply your domain name and all other subdomains you want to obtain certificates for by using the –d flag. Also, supply the &amp;ndash;standalone option in order for certbot to not interfere with Nginx configuration files.</description>
+    </item>
+    
+  </channel>
+</rss>

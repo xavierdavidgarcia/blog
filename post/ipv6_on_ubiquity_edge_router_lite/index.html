@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+<head>
+    <base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Xavier Garcia">
+
+<meta name="description" content="">
+
+<title>Activate IPv6 on Ubiquity Edge router lite</title>
+<meta name="generator" content="Hugo 0.57.2" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link"><a href="https://xavier-garcia.com">Root</a></h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">Xavier Garcia - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="/post/minikube-and-debian9/">How to setup minikube lab on debian 9 with virtualbox</a></li>
+            
+            <li><a href="/post/moving_kops_aws_kubernetes_api_from_public_to_internal_elb/">Moving Kops Aws Kubernetes API from Public to Internal ELB</a></li>
+            
+            <li><a href="/post/how_to_create_a_helm_chart_repository_using_amazon_s3/">How to create a Helm chart repository using Amazon S3</a></li>
+            
+            <li><a href="/post/configure_automatically_external_dns_on_kubernetes/">Configure automatically external dns on Kubernetes</a></li>
+            
+            <li><a href="/post/manage_your_friends_with_microservice_in_golang/">Manage your friends with a microservice in Golang</a></li>
+            
+            <li><a href="/post/what_is_tensor_flow/">What is TensorFLow</a></li>
+            
+            <li><a href="/post/deploy_kubernetes_cluster_with_kops/">Deploy Kubernetes cluster with Kops and AWS s3 state</a></li>
+            
+            <li><a href="/post/install_lets_encrypt_debian_9_nginx/">Install Let&#39;s Encrypt with Nginx on Debian 9</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-5/">Design Patterns in Golang - Part-5</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-4/">Design Patterns in Golang - Part-4</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-3/">Design Patterns in Golang - Part-3</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-2/">Design Patterns in Golang - Part-2</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-1/">Design Patterns in Golang - Part-1</a></li>
+            
+            <li><a href="/post/how_do_i_get_the_certificate_authority_certificate_key/">How do I get the certificate authority certificate/key from a cluster created by kops?</a></li>
+            
+            <li><a href="/post/install_drdb_cluster_on_centos_7/">Install DRDB Cluster on Centos 7</a></li>
+            
+            <li><a href="/post/write_functions_in_functional_programming_style_in_scala/">Write Functions In Functional Programming Style In Scala</a></li>
+            
+            <li><a href="/post/decision_trees_in_python/">Decision trees in python</a></li>
+            
+            <li><a href="/post/logistic_regression_in_python/">Logistic Regression in python</a></li>
+            
+            <li><a href="/post/linear_regression_in_python/">Linear Regression in python</a></li>
+            
+            <li><a href="/post/clean_clean_my_docker/">Clean clean my docker</a></li>
+            
+            <li><a href="/post/my_docker_alias/">Docker alias for your zsh</a></li>
+            
+            <li><a href="/post/encryption_with_rsa/">Encryption with an RSA</a></li>
+            
+            <li><a href="/post/how_to_write_good_post_mortem/">How to Write a good post mortem</a></li>
+            
+            <li><a href="/post/how_to_write_product_requirements_document/">How to Write a Product Requirements Document (PRD)</a></li>
+            
+            <li><a href="/post/curl_http-2_support/">cURL HTTP/2 support</a></li>
+            
+            <li><a href="/post/template-7/">Bindwith PostgreSQL backend at CentOS 6.4</a></li>
+            
+            <li><a href="/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/">How to install and configure GlusterFS Server on Ubuntu</a></li>
+            
+            <li><a href="/post/template-5/">Linear Regression in python</a></li>
+            
+            <li><a href="/post/ipv6_on_ubiquity_edge_router_lite/">Activate IPv6 on Ubiquity Edge router lite</a></li>
+            
+        </ul>
+    </div>
+
+    
+    <div id="tags" class="open">
+        <h3 data-open="tags">Tags</h3>
+        <ul class="tags" style="display: none;">
+            
+            <li><a href="/tags/agile">agile</a></li>
+            
+            <li><a href="/tags/aws">aws</a></li>
+            
+            <li><a href="/tags/centos">centos</a></li>
+            
+            <li><a href="/tags/code">code</a></li>
+            
+            <li><a href="/tags/container">container</a></li>
+            
+            <li><a href="/tags/curl">curl</a></li>
+            
+            <li><a href="/tags/debian">debian</a></li>
+            
+            <li><a href="/tags/design">design</a></li>
+            
+            <li><a href="/tags/designpattern">designpattern</a></li>
+            
+            <li><a href="/tags/dev">dev</a></li>
+            
+            <li><a href="/tags/development">development</a></li>
+            
+            <li><a href="/tags/devops">devops</a></li>
+            
+            <li><a href="/tags/dns">dns</a></li>
+            
+            <li><a href="/tags/docker">docker</a></li>
+            
+            <li><a href="/tags/drdb">drdb</a></li>
+            
+            <li><a href="/tags/encrypt">encrypt</a></li>
+            
+            <li><a href="/tags/filesystem">filesystem</a></li>
+            
+            <li><a href="/tags/functional">functional</a></li>
+            
+            <li><a href="/tags/glusterfs">glusterfs</a></li>
+            
+            <li><a href="/tags/go">go</a></li>
+            
+            <li><a href="/tags/golang">golang</a></li>
+            
+            <li><a href="/tags/helm">helm</a></li>
+            
+            <li><a href="/tags/http">http</a></li>
+            
+            <li><a href="/tags/ipv6">ipv6</a></li>
+            
+            <li><a href="/tags/kops">kops</a></li>
+            
+            <li><a href="/tags/kubernetes">kubernetes</a></li>
+            
+            <li><a href="/tags/lab">lab</a></li>
+            
+            <li><a href="/tags/letsencrypt">letsencrypt</a></li>
+            
+            <li><a href="/tags/linux">linux</a></li>
+            
+            <li><a href="/tags/machinelearning">machinelearning</a></li>
+            
+            <li><a href="/tags/microservice">microservice</a></li>
+            
+            <li><a href="/tags/minikube">minikube</a></li>
+            
+            <li><a href="/tags/mongodb">mongodb</a></li>
+            
+            <li><a href="/tags/network">network</a></li>
+            
+            <li><a href="/tags/nginx">nginx</a></li>
+            
+            <li><a href="/tags/postmortem">postmortem</a></li>
+            
+            <li><a href="/tags/prd">prd</a></li>
+            
+            <li><a href="/tags/product">product</a></li>
+            
+            <li><a href="/tags/project_management">project_management</a></li>
+            
+            <li><a href="/tags/python">python</a></li>
+            
+            <li><a href="/tags/router">router</a></li>
+            
+            <li><a href="/tags/rsa">rsa</a></li>
+            
+            <li><a href="/tags/s3">s3</a></li>
+            
+            <li><a href="/tags/scala">scala</a></li>
+            
+            <li><a href="/tags/scrum">scrum</a></li>
+            
+            <li><a href="/tags/security">security</a></li>
+            
+            <li><a href="/tags/shell">shell</a></li>
+            
+            <li><a href="/tags/ssh">ssh</a></li>
+            
+            <li><a href="/tags/ssl">ssl</a></li>
+            
+            <li><a href="/tags/startup">startup</a></li>
+            
+            <li><a href="/tags/tensorflow">tensorflow</a></li>
+            
+            <li><a href="/tags/ubiquity">ubiquity</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Activate IPv6 on Ubiquity Edge router lite</h1>
+<h4>Published 04-09-2016 00:00:00</h4>
+
+<article>
+    
+
+<h3 id="summary">Summary</h3>
+
+<p>Below are the commands and my thoughts on setting up IPv6 on a Ubiquiti Networks EdgeRouter Lite (ERLite-3). Were one to follow this as a guide, the results should be functioning IPv6 on the WAN and LAN side.</p>
+
+<p>Note: As of EdgeMax v1.9.0, most IPv6 functionality is not available via the GUI. But, there is a new wizard as of this release which may work for the most basic case.</p>
+
+<pre><code>EdgeMax software version: 1.9.0 (works for 1.7.0 and above)
+LAN: eth0
+WAN: eth1
+ISP: Comcast.com
+</code></pre>
+
+<h2 id="setup-firewall">Setup Firewall</h2>
+
+<p>First, it’s important that we setup the firewall as the default policy is “accept” and your LAN clients will have routable IPs. That’s bad. Unlike IPv4, there will be no NAT’ing.
+Compared to our IPv4 firewall rules, there is one important difference: we need to permit ICMPv6 and DHCP in order for DHCPv6-PD to function.</p>
+
+<h4 id="create-a-policy-for-wan-lan-clients">Create a policy for WAN-&gt;LAN Clients:</h4>
+
+<pre><code>edit firewall ipv6-name WAN6_IN
+set default-action drop
+set rule 10 action accept
+set rule 10 description &quot;allow established&quot;
+set rule 10 protocol all
+set rule 10 state established enable
+set rule 10 state related enable
+set rule 20 action drop
+set rule 20 description &quot;drop invalid packets&quot;
+set rule 20 protocol all
+set rule 20 state invalid enable
+set rule 30 action accept
+set rule 30 description &quot;allow ICMPv6&quot;
+set rule 30 protocol icmpv6
+top
+</code></pre>
+
+<p>Now create a policy for WAN-&gt;Router (aka local):</p>
+
+<pre><code>edit firewall ipv6-name WAN6_LOCAL
+set default-action drop
+set rule 10 action accept
+set rule 10 description &quot;allow established&quot;
+set rule 10 protocol all
+set rule 10 state established enable
+set rule 10 state related enable
+set rule 20 action drop
+set rule 20 description &quot;drop invalid packets&quot;
+set rule 20 protocol all
+set rule 20 state invalid enable
+set rule 30 action accept
+set rule 30 description &quot;allow ICMPv6&quot;
+set rule 30 protocol icmpv6
+set rule 40 action accept
+set rule 40 description &quot;allow DHCPv6 client/server&quot;
+set rule 40 destination port 546
+set rule 40 source port 547
+set rule 40 protocol udp
+top
+</code></pre>
+
+<p>Now attach the policies to your WAN interface:</p>
+
+<pre><code>set interfaces ethernet eth1 firewall in ipv6-name WAN6_IN
+set interfaces ethernet eth1 firewall local ipv6-name WAN6_LOCAL
+</code></pre>
+
+<p>Again, it’s important to note that we had to explicitly allow ICMP and DHCPv6.</p>
+
+<h4 id="dhcpv6-prefix-delegation">DHCPv6 Prefix Delegation</h4>
+
+<p>Now we’ll request IPv6 addresses from our ISP.
+You may need to manually discover the prefix length that your ISP provides. The two most common lengths appear to /56 and /64 (WebPass uses the latter).
+Note: We’ll be using SLAAC (Stateless Address Autoconfiguration) instead of stateful DHCP (which is how IPv4 DHCP works).</p>
+
+<pre><code>edit interfaces ethernet eth1
+set dhcpv6-pd pd 0 prefix-length /64
+set dhcpv6-pd pd 0 interface eth0 host-address ::1
+set dhcpv6-pd pd 0 interface eth0 prefix-id :0
+set dhcpv6-pd pd 0 interface eth0 service slaac
+top
+</code></pre>
+
+<p>eth0 and eth1 are both referenced above, be sure to note the correct interface. In short, we’re telling eth1 (WAN) to provide prefix-delegation to eth0 (LAN).
+If you are also using eth2 for a second LAN port, you’ll need to use the prefix-id :1 for that interface.
+If you are running an EdgeMax OS version released since February 2016 (v1.8.0), you can skip down to Committing the Changes. If not, keeping reading.</p>
+
+<blockquote>
+<p>Router Advertisement — pre v1.8.0
+Note: This section should only be necessary if you’re running an EdgeMax version older than v1.8.0.</p>
+</blockquote>
+
+<p>It will also work with newer versions but is unnecessary.</p>
+
+<p>If you run commit at this point, you will receive an error like this,</p>
+
+<pre><code>sed: can’t read /etc/radvd.conf: No such file or directory
+Unable to edit radvd system config file. Exit code 512
+</code></pre>
+
+<p>The EdgeMax software is trying to start the radvd daemon because we setup dhcpv6-pd, but it failed to find a configuration file. I consider this a bug and hope the authors resolve this in future versions, as it’s entirely opaque to the casual hacker. (Update: they have!)</p>
+
+<p>The solution is adding a router-advert section to your LAN interface, like so:</p>
+
+<pre><code>set interfaces ethernet eth0 ipv6 router-advert prefix ::/64
+</code></pre>
+
+<p>In the background, the EdgeMax software will write a valid radvd.conf, which will resolve the problem mentioned above.</p>
+
+<p>Committing the Changes</p>
+
+<pre><code>commit
+save
+</code></pre>
+
+<h4 id="verification-and-testing">Verification and Testing</h4>
+
+<p>If you exit the config CLI, you should be able to see IPv4 and IPv6 addresses on your LAN and WAN interfaces,</p>
+
+<pre><code>$ show interfaces
+Codes: S — State, L — Link, u — Up, D — Down, A — Admin Down
+Interface  IP Address            S/L Description 
+ — — — — — — — — — — — — — — — — — — 
+eth0       192.168.1.1/24        u/u LAN0 
+           &lt;redacted ipv6&gt;::1/64 
+eth1       &lt;redacted ipv4&gt;/23    u/u WAN0 
+           &lt;redacted ipv6&gt;/128
+</code></pre>
+
+<p>Test from your router and your LAN clients,</p>
+
+<pre><code>$ ping6 google.com
+PING google.com(nuq05s02-in-x00.1e100.net) 56 data bytes
+64 bytes from nuq05s02-in-x00.1e100.net: icmp_seq=1 ttl=56 time=5.85 ms
+64 bytes from nuq05s02-in-x00.1e100.net: icmp_seq=2 ttl=56 time=5.48 ms
+64 bytes from nuq05s02-in-x00.1e100.net: icmp_seq=3 ttl=56 time=5.37 ms
+Don’t forget to save your config!
+</code></pre>
+
+</article>
+
+
+
+</div>
+</div>
+<script src="/js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

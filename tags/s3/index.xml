@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>s3 on Xavier Garcia</title>
+    <link>/tags/s3/</link>
+    <description>Recent content in s3 on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deploy Kubernetes cluster with Kops and AWS s3 state</title>
+      <link>/post/deploy_kubernetes_cluster_with_kops/</link>
+      <pubDate>Wed, 03 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/deploy_kubernetes_cluster_with_kops/</guid>
+      <description>Install Kops on your local Kops git repository: here
+Prerequisite kubectl is required, see here.
+OSX From Homebrew brew update &amp;amp;&amp;amp; brew install kops  The kops binary is also available via our releases.
+Linux curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d &#39;&amp;quot;&#39; -f 4)/kops-linux-amd64 chmod +x kops-linux-amd64 sudo mv kops-linux-amd64 /usr/local/bin/kops  Create the AWS s3 Bucket  aws s3api create-bucket \ --bucket kubernetes.bucket.aws.s3.name \ --region us-east-1 { &amp;quot;Location&amp;quot;: &amp;quot;/kubernetes.</description>
+    </item>
+    
+  </channel>
+</rss>

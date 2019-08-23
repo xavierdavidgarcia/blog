@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Glusterfs on Xavier Garcia</title>
+    <link>/tags/glusterfs/</link>
+    <description>Recent content in Glusterfs on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Oct 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/glusterfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to install and configure GlusterFS Server on Ubuntu</title>
+      <link>/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/</link>
+      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/</guid>
+      <description>GlusterFS is a distributed File System. In this article, we&amp;rsquo;ll show you how to create and configure GlusterFS Server on three nodes. You can create different types of GlusterFS volumes. We will only show you how to configure a replicated volume so that if you store a file on one machine, it will get replicated to all the nodes in the cluster. Suppose the hostnames of the three servers on which we want to install GlusterFS server are ,  and .</description>
+    </item>
+    
+  </channel>
+</rss>

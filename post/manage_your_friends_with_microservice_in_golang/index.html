@@ -1,0 +1,513 @@
+<!doctype html>
+<html>
+<head>
+    <base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Xavier Garcia">
+
+<meta name="description" content="">
+
+<title>Manage your friends with a microservice in Golang</title>
+<meta name="generator" content="Hugo 0.57.2" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="/css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    <h3 class="home-link"><a href="https://xavier-garcia.com">Root</a></h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">Xavier Garcia - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="/post/minikube-and-debian9/">How to setup minikube lab on debian 9 with virtualbox</a></li>
+            
+            <li><a href="/post/moving_kops_aws_kubernetes_api_from_public_to_internal_elb/">Moving Kops Aws Kubernetes API from Public to Internal ELB</a></li>
+            
+            <li><a href="/post/how_to_create_a_helm_chart_repository_using_amazon_s3/">How to create a Helm chart repository using Amazon S3</a></li>
+            
+            <li><a href="/post/configure_automatically_external_dns_on_kubernetes/">Configure automatically external dns on Kubernetes</a></li>
+            
+            <li><a href="/post/manage_your_friends_with_microservice_in_golang/">Manage your friends with a microservice in Golang</a></li>
+            
+            <li><a href="/post/what_is_tensor_flow/">What is TensorFLow</a></li>
+            
+            <li><a href="/post/deploy_kubernetes_cluster_with_kops/">Deploy Kubernetes cluster with Kops and AWS s3 state</a></li>
+            
+            <li><a href="/post/install_lets_encrypt_debian_9_nginx/">Install Let&#39;s Encrypt with Nginx on Debian 9</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-5/">Design Patterns in Golang - Part-5</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-4/">Design Patterns in Golang - Part-4</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-3/">Design Patterns in Golang - Part-3</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-2/">Design Patterns in Golang - Part-2</a></li>
+            
+            <li><a href="/post/design_patterns_in_golang-part-1/">Design Patterns in Golang - Part-1</a></li>
+            
+            <li><a href="/post/how_do_i_get_the_certificate_authority_certificate_key/">How do I get the certificate authority certificate/key from a cluster created by kops?</a></li>
+            
+            <li><a href="/post/install_drdb_cluster_on_centos_7/">Install DRDB Cluster on Centos 7</a></li>
+            
+            <li><a href="/post/write_functions_in_functional_programming_style_in_scala/">Write Functions In Functional Programming Style In Scala</a></li>
+            
+            <li><a href="/post/decision_trees_in_python/">Decision trees in python</a></li>
+            
+            <li><a href="/post/logistic_regression_in_python/">Logistic Regression in python</a></li>
+            
+            <li><a href="/post/linear_regression_in_python/">Linear Regression in python</a></li>
+            
+            <li><a href="/post/clean_clean_my_docker/">Clean clean my docker</a></li>
+            
+            <li><a href="/post/my_docker_alias/">Docker alias for your zsh</a></li>
+            
+            <li><a href="/post/encryption_with_rsa/">Encryption with an RSA</a></li>
+            
+            <li><a href="/post/how_to_write_good_post_mortem/">How to Write a good post mortem</a></li>
+            
+            <li><a href="/post/how_to_write_product_requirements_document/">How to Write a Product Requirements Document (PRD)</a></li>
+            
+            <li><a href="/post/curl_http-2_support/">cURL HTTP/2 support</a></li>
+            
+            <li><a href="/post/template-7/">Bindwith PostgreSQL backend at CentOS 6.4</a></li>
+            
+            <li><a href="/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/">How to install and configure GlusterFS Server on Ubuntu</a></li>
+            
+            <li><a href="/post/template-5/">Linear Regression in python</a></li>
+            
+            <li><a href="/post/ipv6_on_ubiquity_edge_router_lite/">Activate IPv6 on Ubiquity Edge router lite</a></li>
+            
+        </ul>
+    </div>
+
+    
+    <div id="tags" class="open">
+        <h3 data-open="tags">Tags</h3>
+        <ul class="tags" style="display: none;">
+            
+            <li><a href="/tags/agile">agile</a></li>
+            
+            <li><a href="/tags/aws">aws</a></li>
+            
+            <li><a href="/tags/centos">centos</a></li>
+            
+            <li><a href="/tags/code">code</a></li>
+            
+            <li><a href="/tags/container">container</a></li>
+            
+            <li><a href="/tags/curl">curl</a></li>
+            
+            <li><a href="/tags/debian">debian</a></li>
+            
+            <li><a href="/tags/design">design</a></li>
+            
+            <li><a href="/tags/designpattern">designpattern</a></li>
+            
+            <li><a href="/tags/dev">dev</a></li>
+            
+            <li><a href="/tags/development">development</a></li>
+            
+            <li><a href="/tags/devops">devops</a></li>
+            
+            <li><a href="/tags/dns">dns</a></li>
+            
+            <li><a href="/tags/docker">docker</a></li>
+            
+            <li><a href="/tags/drdb">drdb</a></li>
+            
+            <li><a href="/tags/encrypt">encrypt</a></li>
+            
+            <li><a href="/tags/filesystem">filesystem</a></li>
+            
+            <li><a href="/tags/functional">functional</a></li>
+            
+            <li><a href="/tags/glusterfs">glusterfs</a></li>
+            
+            <li><a href="/tags/go">go</a></li>
+            
+            <li><a href="/tags/golang">golang</a></li>
+            
+            <li><a href="/tags/helm">helm</a></li>
+            
+            <li><a href="/tags/http">http</a></li>
+            
+            <li><a href="/tags/ipv6">ipv6</a></li>
+            
+            <li><a href="/tags/kops">kops</a></li>
+            
+            <li><a href="/tags/kubernetes">kubernetes</a></li>
+            
+            <li><a href="/tags/lab">lab</a></li>
+            
+            <li><a href="/tags/letsencrypt">letsencrypt</a></li>
+            
+            <li><a href="/tags/linux">linux</a></li>
+            
+            <li><a href="/tags/machinelearning">machinelearning</a></li>
+            
+            <li><a href="/tags/microservice">microservice</a></li>
+            
+            <li><a href="/tags/minikube">minikube</a></li>
+            
+            <li><a href="/tags/mongodb">mongodb</a></li>
+            
+            <li><a href="/tags/network">network</a></li>
+            
+            <li><a href="/tags/nginx">nginx</a></li>
+            
+            <li><a href="/tags/postmortem">postmortem</a></li>
+            
+            <li><a href="/tags/prd">prd</a></li>
+            
+            <li><a href="/tags/product">product</a></li>
+            
+            <li><a href="/tags/project_management">project_management</a></li>
+            
+            <li><a href="/tags/python">python</a></li>
+            
+            <li><a href="/tags/router">router</a></li>
+            
+            <li><a href="/tags/rsa">rsa</a></li>
+            
+            <li><a href="/tags/s3">s3</a></li>
+            
+            <li><a href="/tags/scala">scala</a></li>
+            
+            <li><a href="/tags/scrum">scrum</a></li>
+            
+            <li><a href="/tags/security">security</a></li>
+            
+            <li><a href="/tags/shell">shell</a></li>
+            
+            <li><a href="/tags/ssh">ssh</a></li>
+            
+            <li><a href="/tags/ssl">ssl</a></li>
+            
+            <li><a href="/tags/startup">startup</a></li>
+            
+            <li><a href="/tags/tensorflow">tensorflow</a></li>
+            
+            <li><a href="/tags/ubiquity">ubiquity</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Manage your friends with a microservice in Golang</h1>
+<h4>Published 03-07-2018 00:00:00</h4>
+
+<article>
+    
+
+<p>In this tutorial I will illustrate how you can build your own RESTful API in Go and MongoDB.</p>
+
+<h3 id="api-specification">API Specification</h3>
+
+<p>The REST API service will expose endpoints to manage a list of friends. The operations that our endpoints will allow are:</p>
+
+<pre><code>GET /friends  Get list of friends
+GET /friends/:id Find a friends by id
+POST /friends  Create new friend
+PUT /firends Update a friend
+DELETE /firends Delete a friend
+</code></pre>
+
+<h4 id="fetching-dependencies">Fetching Dependencies</h4>
+
+<p>Before we begin, we need to get the packages we need to setup the API:</p>
+
+<pre><code>go get github.com/BurntSushi/toml gopkg.in/mgo.v2 github.com/gorilla/mux
+</code></pre>
+
+<ul>
+<li>toml : Parse the configuration file (MongoDB server &amp; credentials)</li>
+<li>mux : Request router and dispatcher for matching incoming requests to their respective handler</li>
+<li>mgo : MongoDB driver</li>
+</ul>
+
+<h3 id="api-structure">API structure</h3>
+
+<p>Once the dependencies are installed, we create a file called “app.go“, with the following content:</p>
+
+<pre><code>package main
+
+import (
+	&quot;fmt&quot;
+	&quot;log&quot;
+	&quot;net/http&quot;
+
+	&quot;github.com/gorilla/mux&quot;
+)
+
+func AllFriendsEndPoint(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, &quot;not implemented yet !&quot;)
+}
+
+func FindFriendEndpoint(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, &quot;not implemented yet !&quot;)
+}
+
+func CreateFriendEndPoint(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, &quot;not implemented yet !&quot;)
+}
+
+func UpdateFriendEndPoint(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, &quot;not implemented yet !&quot;)
+}
+
+func DeleteFriendEndPoint(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, &quot;not implemented yet !&quot;)
+}
+
+func main() {
+	r := mux.NewRouter()
+	r.HandleFunc(&quot;/friends&quot;, AllFriendsEndPoint).Methods(&quot;GET&quot;)
+	r.HandleFunc(&quot;/friends&quot;, CreateFriendEndPoint).Methods(&quot;POST&quot;)
+	r.HandleFunc(&quot;/friends&quot;, UpdateFriendEndPoint).Methods(&quot;PUT&quot;)
+	r.HandleFunc(&quot;/friends&quot;, DeleteFriendEndPoint).Methods(&quot;DELETE&quot;)
+	r.HandleFunc(&quot;/friends/{id}&quot;, FindFriendEndpoint).Methods(&quot;GET&quot;)
+	if err := http.ListenAndServe(&quot;:3000&quot;, r); err != nil {
+		log.Fatal(err)
+	}
+}
+</code></pre>
+
+<p>The code above creates a controller for each endpoint, then expose an HTTP server on port 3000.</p>
+
+<blockquote>
+<p>Note: We are using GET, POST, PUT, and DELETE where appropriate. We are also defining parameters that can be passed in</p>
+</blockquote>
+
+<p>To run the server in local, type the following command:</p>
+
+<pre><code>go run app.go
+</code></pre>
+
+<p>If you point your browser to <a href="http://localhost:3000/friends">http://localhost:3000/friends</a>, you should see:</p>
+
+<h3 id="model">Model</h3>
+
+<p>Now that we have a minimal application, it’s time to create a basic Friend model. In Go, we use struct keyword to create a model:</p>
+
+<pre><code>type Friend struct {
+	ID          bson.ObjectId `bson:&quot;_id&quot; json:&quot;id&quot;`
+	Name        string        `bson:&quot;name&quot; json:&quot;name&quot;`
+	Picture  string        `bson:&quot;friend_picture&quot; json:&quot;friend_picture&quot;`
+	Description string        `bson:&quot;description&quot; json:&quot;description&quot;`
+}
+</code></pre>
+
+<p>Next, we will create the Data Access Object to manage database operations.</p>
+
+<h3 id="data-access-object">Data Access Object</h3>
+
+<h4 id="establish-connection">Establish Connection</h4>
+
+<pre><code>package dao
+
+import (
+	&quot;log&quot;
+
+	&quot;github.com/mlabouardy/Friends-restapi/models&quot;
+	mgo &quot;gopkg.in/mgo.v2&quot;
+	&quot;gopkg.in/mgo.v2/bson&quot;
+)
+
+type FriendsDAO struct {
+	Server   string
+	Database string
+}
+
+var db *mgo.Database
+
+const (
+	COLLECTION = &quot;Friends&quot;
+)
+
+func (m *FriendsDAO) Connect() {
+	session, err := mgo.Dial(m.Server)
+	if err != nil {
+		log.Fatal(err)
+	}
+	db = session.DB(m.Database)
+}
+</code></pre>
+
+<p>The connect() method as its name implies, establish a connection to MongoDB database.</p>
+
+<h4 id="database-queries">Database Queries</h4>
+
+<p>The implementation is relatively straighforward and just includes issuing right method using db.C(COLLECTION) object and returning the results. These methods can be implemented as follows:</p>
+
+<pre><code>func (m *FriendsDAO) FindAll() ([]Friend, error) {
+	var Friends []Friend
+	err := db.C(COLLECTION).Find(bson.M{}).All(&amp;Friends)
+	return Friends, err
+}
+
+func (m *FriendsDAO) FindById(id string) (Friend, error) {
+	var Friend Friend
+	err := db.C(COLLECTION).FindId(bson.ObjectIdHex(id)).One(&amp;Friend)
+	return Friend, err
+}
+
+func (m *FriendsDAO) Insert(Friend Friend) error {
+	err := db.C(COLLECTION).Insert(&amp;Friend)
+	return err
+}
+
+func (m *FriendsDAO) Delete(Friend Friend) error {
+	err := db.C(COLLECTION).Remove(&amp;Friend)
+	return err
+}
+
+func (m *FriendsDAO) Update(Friend Friend) error {
+	err := db.C(COLLECTION).UpdateId(Friend.ID, &amp;Friend)
+	return err
+}
+</code></pre>
+
+<h3 id="setup-api-endpoints">Setup API Endpoints</h3>
+
+<h4 id="create-a-friend">Create a Friend</h4>
+
+<p>Update the CreateFriendEndpoint method as follows:</p>
+
+<pre><code>func CreateFriendEndPoint(w http.ResponseWriter, r *http.Request) {
+	defer r.Body.Close()
+	var Friend Friend
+	if err := json.NewDecoder(r.Body).Decode(&amp;Friend); err != nil {
+		respondWithError(w, http.StatusBadRequest, &quot;Invalid request payload&quot;)
+		return
+	}
+	Friend.ID = bson.NewObjectId()
+	if err := dao.Insert(Friend); err != nil {
+		respondWithError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+	respondWithJson(w, http.StatusCreated, Friend)
+}
+</code></pre>
+
+<p>It decodes the request body into a Friend object, assign it an ID, and uses the DAO Insert method to create a Friend in database.</p>
+
+<p>Let’s test it out with cURL</p>
+
+<pre><code>curl -sSX POST -d ‘{“name”:JohnDoe,”friend_picture”:”https://i2.wp.com/thetempest.co/wp-content/uploads/2016/09/Friends-TV-show-on-NBC-canceled-no-season-11.jpg&quot;, “description”:”Friends”}’ http://localhost:3000/friends | jq ‘.’
+</code></pre>
+
+<p>#### List of Friends</p>
+
+<p>The code below is self explanatory:</p>
+
+<pre><code>func AllFriendsEndPoint(w http.ResponseWriter, r *http.Request) {
+	Friends, err := dao.FindAll()
+	if err != nil {
+		respondWithError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+	respondWithJson(w, http.StatusOK, Friends)
+}
+</code></pre>
+
+<p>It uses FindAll method of DAO to fetch list of Friends from database.</p>
+
+<p>Let’s test it out with cURL:</p>
+
+<pre><code>curl -sSX GET http://localhost:3000/friends | jq ‘.’
+</code></pre>
+
+<p>#### Find a Friend</p>
+
+<p>We will use the mux library to get the parameters that the users passed in with the request:</p>
+
+<pre><code>func FindFriendEndpoint(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	Friend, err := dao.FindById(params[&quot;id&quot;])
+	if err != nil {
+		respondWithError(w, http.StatusBadRequest, &quot;Invalid Friend ID&quot;)
+		return
+	}
+	respondWithJson(w, http.StatusOK, Friend)
+}
+</code></pre>
+
+<p>Let’s test it out with cURL:</p>
+
+<pre><code>curl -sSX GET http://localhost:3000/friends/599570faf0429b4494cfa5d4 | jq ‘.’
+</code></pre>
+
+<p>#### Update an existing Friend</p>
+
+<p>Update the UpdateFriendEndPoint method as follows:</p>
+
+<pre><code>func UpdateFriendEndPoint(w http.ResponseWriter, r *http.Request) {
+	defer r.Body.Close()
+	var Friend Friend
+	if err := json.NewDecoder(r.Body).Decode(&amp;Friend); err != nil {
+		respondWithError(w, http.StatusBadRequest, &quot;Invalid request payload&quot;)
+		return
+	}
+	if err := dao.Update(Friend); err != nil {
+		respondWithError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+	respondWithJson(w, http.StatusOK, map[string]string{&quot;result&quot;: &quot;success&quot;})
+}
+</code></pre>
+
+<p>Let’s test it out with cURL:</p>
+
+<pre><code>curl -sSX PUT -d ‘{“name”:JohnDoe,”friend_picture”:”https://i2.wp.com/thetempest.co/wp-content/uploads/2016/09/Friends-TV-show-on-NBC-canceled-no-season-11.jpg&quot;, “description”:”Friends”}’ http://localhost:3000/friends | jq ‘.’
+</code></pre>
+
+<h4 id="delete-an-existing-friend">Delete an existing Friend</h4>
+
+<p>Update the DeleteFriendEndPoint method as follows:</p>
+
+<pre><code>func DeleteFriendEndPoint(w http.ResponseWriter, r *http.Request) {
+	defer r.Body.Close()
+	var Friend Friend
+	if err := json.NewDecoder(r.Body).Decode(&amp;Friend); err != nil {
+		respondWithError(w, http.StatusBadRequest, &quot;Invalid request payload&quot;)
+		return
+	}
+	if err := dao.Delete(Friend); err != nil {
+		respondWithError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+	respondWithJson(w, http.StatusOK, map[string]string{&quot;result&quot;: &quot;success&quot;})
+}
+</code></pre>
+
+<p>Let’s test it out with cURL:</p>
+
+<pre><code>curl -sSX DELETE -d ‘{“name”:JohnDoe,”friend_picture”:”https://i2.wp.com/thetempest.co/wp-content/uploads/2016/09/Friends-TV-show-on-NBC-canceled-no-season-11.jpg&quot;, “description”:”Friends”}’ http://localhost:3000/Friends | jq ‘.’
+</code></pre>
+
+</article>
+
+
+
+</div>
+</div>
+<script src="/js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+

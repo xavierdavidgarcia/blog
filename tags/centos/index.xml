@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Centos on Xavier Garcia</title>
+    <link>/tags/centos/</link>
+    <description>Recent content in Centos on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install DRDB Cluster on Centos 7</title>
+      <link>/post/install_drdb_cluster_on_centos_7/</link>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install_drdb_cluster_on_centos_7/</guid>
+      <description>What is DRBD (Distributed Replicated Block Device)? DRBD (Distributed Replicated Block Device) is a Linux-based software component to mirror or replicate individual storage devices (such as hard disks or partitions) from one node to the other(s) over a network connection. DRBD makes it possible to maintain consistency of data among multiple systems in a network. DRBD also ensures high availability (HA) for Linux applications. DRBD supports three distinct replication modes, allowing three degrees of replication synchronicity.</description>
+    </item>
+    
+    <item>
+      <title>How to install and configure GlusterFS Server on Ubuntu</title>
+      <link>/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/</link>
+      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_to_install_and_configure_glusterfs_server_on_ubuntu/</guid>
+      <description>GlusterFS is a distributed File System. In this article, we&amp;rsquo;ll show you how to create and configure GlusterFS Server on three nodes. You can create different types of GlusterFS volumes. We will only show you how to configure a replicated volume so that if you store a file on one machine, it will get replicated to all the nodes in the cluster. Suppose the hostnames of the three servers on which we want to install GlusterFS server are ,  and .</description>
+    </item>
+    
+  </channel>
+</rss>

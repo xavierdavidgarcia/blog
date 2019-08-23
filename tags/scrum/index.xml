@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SCRUM on Xavier Garcia</title>
+    <link>/tags/scrum/</link>
+    <description>Recent content in SCRUM on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/scrum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Write a good post mortem</title>
+      <link>/post/how_to_write_good_post_mortem/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_to_write_good_post_mortem/</guid>
+      <description>Introduction If you’ve been a part of any project, you know that things do not always go as planned. Even if you finished on-time and under budget, there’s a good chance you can always find better ways to run projects.
+The best way to assess your work is to conduct a post-mortem meeting, also called a retrospective meeting for those of you who get a certain feeling when you hear the word “post-mortem”.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RSA on Xavier Garcia</title>
+    <link>/tags/rsa/</link>
+    <description>Recent content in RSA on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/rsa/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Encryption with an RSA</title>
+      <link>/post/encryption_with_rsa/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/encryption_with_rsa/</guid>
+      <description>How to encrypt a message or file using Openssl With openssl, it&amp;rsquo;s not too hard. The following tutorial assumes you&amp;rsquo;ve setup RSA private/publicc.
+ Note: If you&amp;rsquo;re on OSX, you should install the latest versions of OpenSSL and OpenSSH with Homebrew.
+ First, let&amp;rsquo;s start with our plaintext file:
+# echo &amp;quot;Hello world&amp;quot; &amp;gt; test.txt  Encrypt with Public key # cat test.txt | openssl rsautl -encrypt -pubin -inkey ~/.</description>
+    </item>
+    
+  </channel>
+</rss>

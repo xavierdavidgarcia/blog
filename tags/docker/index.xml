@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Xavier Garcia</title>
+    <link>/tags/docker/</link>
+    <description>Recent content in Docker on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Clean clean my docker</title>
+      <link>/post/clean_clean_my_docker/</link>
+      <pubDate>Fri, 12 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/clean_clean_my_docker/</guid>
+      <description>Old school way Kill all running containers docker kill $(docker ps -q)  Delete all stopped containers (including data-only containers) docker rm $(docker ps -a -q)  Delete all &amp;lsquo;untagged/dangling&amp;rsquo; () images docker rmi $(docker images -q -f dangling=true)  Delete ALL images docker rmi $(docker images -q)  Docker command Since docker 1.25
+docker system prune  https://docs.docker.com/config/pruning/#prune-images</description>
+    </item>
+    
+    <item>
+      <title>Docker alias for your zsh</title>
+      <link>/post/my_docker_alias/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/my_docker_alias/</guid>
+      <description>Some docker alias to import on your shell echo &amp;quot;# Importing Docker Aliases&amp;quot; # ------------------------------------ Docker alias and function ------------------------------------ # Get latest container ID alias dl=&amp;quot;docker ps -l -q&amp;quot; # Docker ps alias dps=&amp;quot;docker ps&amp;quot; alias dpsa=&amp;quot;docker ps -a&amp;quot; # Get container IP alias dip=&amp;quot;docker inspect --format &#39;{{ .NetworkSettings.IPAddress }}&#39;&amp;quot; # docker inspect di() { docker inspect $1; } # Execute interactive container, e.g., $dex base /bin/bash alias dexec=&amp;quot;docker exec -i -t&amp;quot; # Stop all containers dstop() { docker stop $(docker ps -a -q); } # Remove all containers drm() { docker rm $(docker ps -a -q); } # Stop and Remove all containers alias drmf=&#39;docker stop $(docker ps -a -q) &amp;amp;&amp;amp; docker rm $(docker ps -a -q)&#39; # Remove all images dri() { docker rmi $(docker images -q); } # Dockerfile build, e.</description>
+    </item>
+    
+  </channel>
+</rss>

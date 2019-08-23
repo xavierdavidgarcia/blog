@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Helm on Xavier Garcia</title>
+    <link>/tags/helm/</link>
+    <description>Recent content in Helm on Xavier Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 05 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/helm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to create a Helm chart repository using Amazon S3</title>
+      <link>/post/how_to_create_a_helm_chart_repository_using_amazon_s3/</link>
+      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how_to_create_a_helm_chart_repository_using_amazon_s3/</guid>
+      <description>Helm is a package manager for Kubernetes. You can bundle Kubernetes resources together as charts that define all the necessary resources and dependencies of an application. You can then use the Helm CLI to install all the pods, services, and ingresses for an application in one simple command.
+Just like Docker or NuGet, there&amp;rsquo;s a common public repository for Helm charts that the helm CLI uses by default. And just like Docker and NuGet, you can host your own Helm repository for your charts.</description>
+    </item>
+    
+  </channel>
+</rss>
